@@ -1,4 +1,4 @@
-/*모음과 자음 구별*/
+/*모음과 자음 구별하기*/
 
 #include<stdio.h>
 int main()
