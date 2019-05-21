@@ -1,4 +1,4 @@
-/*두 정수가 약수인지 서로소인지 구별*/
+/*약수, 서로소 구별*/
 
 #include<stdio.h>
 int main()
@@ -13,5 +13,6 @@ int main()
 		printf("약수입니다.");
 	else
 		printf("서로소입니다.");
+
 	return 0;
 }

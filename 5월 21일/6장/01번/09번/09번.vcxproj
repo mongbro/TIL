@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{2584E5C4-A4F1-4A43-A308-2C896D0F0E87}</ProjectGuid>
+    <ProjectGuid>{DE8F8F3F-1E2C-42B6-8C78-FB037CAF6DD2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My6장02번</RootNamespace>
+    <RootNamespace>My09번</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="02번.c" />
+    <ClCompile Include="..\08번\09번.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
