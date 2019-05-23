@@ -1,24 +1,22 @@
-/*모음과 자음 구별하기*/
-
 #include<stdio.h>
 int main()
 {
 	char a;
-	printf("문자를 입력하시오 : ");
+	printf("문자를 입력하시오");
 	a = getchar();
 
 	switch (a)
 	{
-	case 'O':
-	case 'E':
-	case 'U':
-	case 'I':
-	case 'A':
-	case 'o':
-	case 'e':
-	case 'u':
-	case 'i':
 	case 'a':
+	case 'i':
+	case 'u':
+	case 'e':
+	case 'o':
+	case 'A':
+	case 'I':
+	case 'U':
+	case 'E':
+	case 'O':
 		printf("모음입니다.");
 		break;
 	default:

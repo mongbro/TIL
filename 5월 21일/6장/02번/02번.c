@@ -1,5 +1,3 @@
-/*약수, 서로소 구별*/
-
 #include<stdio.h>
 int main()
 {
@@ -13,6 +11,5 @@ int main()
 		printf("약수입니다.");
 	else
 		printf("서로소입니다.");
-
 	return 0;
 }
