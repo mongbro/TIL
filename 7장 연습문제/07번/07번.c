@@ -1,19 +1,22 @@
-/***************모르것다!!!!!!!!!!!!!!!*****************/
-
-
-
 #include<stdio.h>
 int main()
 {
-	for (int i = 2; i <= 100; i++)
+	int j, n = 0, i = 2;
+
+	for (; i <= 100; i++)
 	{
-		for (int j = i - 1; j >= 1; j--)
+		j = i;
+
+		while (j>0)
 		{
 			if (i%j == 0)
-				break;
-			else
-				printf("%d ", i);
+				n++;
+			j--;
 		}
+
+		if (n == 2)
+			printf("%d ", i);
+		n = 0;
 	}
 	return 0;
 }
