@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{77292F5B-ED1A-4103-9670-259369AD5C9F}</ProjectGuid>
+    <ProjectGuid>{A9A6C305-6F8E-4D38-8D08-1B81EFCC9550}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My06번</RootNamespace>
+    <RootNamespace>문제6번2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="06번.c" />
+    <ClCompile Include="문제6번-2.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
