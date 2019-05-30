@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "자리바꾸기", "자리바꾸기\자리바꾸기.vcxproj", "{C052D045-FA6B-4E15-B53C-CC49DC144898}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Debug|x64.ActiveCfg = Debug|x64
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Debug|x64.Build.0 = Debug|x64
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Debug|x86.ActiveCfg = Debug|Win32
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Debug|x86.Build.0 = Debug|Win32
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Release|x64.ActiveCfg = Release|x64
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Release|x64.Build.0 = Release|x64
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Release|x86.ActiveCfg = Release|Win32
+		{C052D045-FA6B-4E15-B53C-CC49DC144898}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7639FFA1-8F6F-4968-960D-FD3CE7FD17FB}
+	EndGlobalSection
+EndGlobal
