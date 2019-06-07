@@ -15,7 +15,7 @@ int main()
 				for (int k = n; k >= 2 * i + 1; k--)
 					printf("*");
 			}
-			else if (2 * i - 1 > n)
+			else if (2 * i - 1 > n)							//이게 왜이럴까...
 			{
 				for (int j = n; j > i; j--)
 					printf(" ");
