@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<time.h>
 #include<conio.h>		//_getch 포함한 헤더파일
-#include<windows.h>
 
 void position_mon(char arr[15][15], char mon1, char mon2);		//몬스터의 초기 위치
 void move_mon(char mon, char arr[15][15]);		//몬스터의 위치 이동
@@ -11,8 +10,6 @@ void print(char arr[15][15]);
 int find_row(char arr[15][15], char target);		//배열의 행을 찾는 함수
 int find_col(char arr[15][15], char target);		//배열의 열을 찾는 함수
 int check_size(int n, int m);
-
-int rand_num;
 
 int main() {
 	char arr[15][15], mon1 = 'M', mon2 = 'm', user = '#', key='a';
