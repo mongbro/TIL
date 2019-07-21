@@ -9,7 +9,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14번", "14번\14번.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15번", "15번\15번.vcxproj", "{79D8B250-91CB-406E-893B-0C3D59E73EF3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "16번", "16번\16번.vcxproj", "{B07DA226-9D6B-42F9-8017-04AE64DFDE77}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "16-1번", "16번\16번.vcxproj", "{B07DA226-9D6B-42F9-8017-04AE64DFDE77}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "16-2번", "16-2번\16-2번.vcxproj", "{D4587024-84C3-4722-AB22-6124E05F934F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{B07DA226-9D6B-42F9-8017-04AE64DFDE77}.Release|x64.Build.0 = Release|x64
 		{B07DA226-9D6B-42F9-8017-04AE64DFDE77}.Release|x86.ActiveCfg = Release|Win32
 		{B07DA226-9D6B-42F9-8017-04AE64DFDE77}.Release|x86.Build.0 = Release|Win32
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Debug|x64.ActiveCfg = Debug|x64
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Debug|x64.Build.0 = Debug|x64
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Debug|x86.ActiveCfg = Debug|Win32
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Debug|x86.Build.0 = Debug|Win32
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Release|x64.ActiveCfg = Release|x64
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Release|x64.Build.0 = Release|x64
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Release|x86.ActiveCfg = Release|Win32
+		{D4587024-84C3-4722-AB22-6124E05F934F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

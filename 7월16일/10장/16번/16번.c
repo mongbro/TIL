@@ -9,7 +9,8 @@ void move_user(char arr[15][15], char key, char user);		//주인공의 위치 이동
 void print(char arr[15][15]);
 int find_row(char arr[15][15], char target);		//배열의 행을 찾는 함수
 int find_col(char arr[15][15], char target);		//배열의 열을 찾는 함수
-int check_size(int n, int m);
+
+//**********************************메인함수 여기부터******************************************//
 
 int main() {
 	char arr[15][15], mon1 = 'M', mon2 = 'm', user = '#', key='a';
@@ -33,7 +34,7 @@ int main() {
 		row_m2 = find_row(arr, mon2);		//몬스터2의 행 위치
 		col_m2 = find_col(arr, mon2);		//몬스터2의 열 위치
 
-		move_user(arr, key, user);//----------------------------------
+		move_user(arr, key, user);//-----------------------------------------------------
 		move_mon(mon1, arr);			//몬스터1 이동
 		move_mon(mon2, arr);			//몬스터2 이동
 		if (row_m1 == row_m2 && col_m1 == col_m2) {		//몬스터1과 몬스터2가 겹치면 다시 이동
@@ -41,8 +42,8 @@ int main() {
 			move_mon(mon1, arr);		//몬스터1 이동
 			move_mon(mon2, arr);		//몬스터2 이동
 		}
-		system("cls");					//입력되면 화면 지우고 바뀐 화면 다시 출력
-		print(arr);		//--------------------------------------------
+		system("cls");		//********입력되면 화면 지우고 바뀐 화면 다시 출력************
+		print(arr);		//----------------------------------------------------------------
 
 		if (row_m1 == row_user && col_m1 == col_user)		//주인공과 몬스터1의 좌표가 겹칠때 즉, 몬스터1에게 잡혔을때 종료
 			break;
@@ -50,6 +51,8 @@ int main() {
 			break;
 	}
 }
+
+//**********************************메인함수 여기까지******************************************//
 
 void position_mon(char arr[15][15], char mon1, char mon2) {
 	int n1, m1, n2, m2;		//몬스터1(n1, m1)과 2(n2, m2)의 초기 좌표
