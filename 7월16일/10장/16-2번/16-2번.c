@@ -42,7 +42,7 @@ int main() {
 
 		reset_map(arr);
 		move_hero(hero, row_hero, col_hero, hero1);
-		printf("d\n\n");
+		printf("d");
 		move_monster(monster1, mon1);
 		move_monster(monster2, mon2);
 
@@ -61,7 +61,7 @@ int main() {
 		arr[row_mon1][col_mon1] = mon1;		//몬스터1 위치 갱신
 		arr[row_mon2][col_mon2] = mon2;		//몬스터2 위치 갱신
 		
-	
+		system("cls");
 		print(arr);
 
 		printf("주인공 좌표 [%d][%d]\n몬스터1 좌표 [%d][%d]\n몬스터2 좌표 [%d][%d]", row_hero, col_hero, row_mon1, col_mon1, row_mon2, col_mon2);
