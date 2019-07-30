@@ -3,13 +3,15 @@
 #include<conio.h>
 #include<time.h>
 
+////////////////////////////////////////////////////// 모르겠다~~~~ 당분간 포기다~~~~ ////////////////////////////////////////////////////////////////////
+
 void print(char arr[15][15]);
 void reset_map(char arr[15][15]);
 void mon_start(char monster1[15][15], char monster2[15][15], char mon1, char mon2);
 int find_row(char arr[15][15], char target);
 int find_col(char arr[15][15], char target);
 void move_hero(char hero[15][15], int row_hero, int col_hero, char hero1);
-void move_monster(char monster[15][15], char mon);
+void move_monster(char monster1[15][15], char mon1, int row_mon1, int col_mon1, char monster2[15][15], char mon2, int row_mon2, int col_mon2);
 
 /////////////////////////////////////main start////////////////////////////////////
 
@@ -17,7 +19,7 @@ int main() {
 	char arr[15][15];		//전체 맵 배열
 	char hero[15][15] = { 0 };		//주인공 이동 좌표 배열
 	char monster1[15][15] = { 0 }, monster2[15][15] = { 0 };		//몬스터 이동 좌표 배열
-	char hero1 = '#', mon1 = 'M', mon2 = 'M';
+	char hero1 = '#', mon1 = 'M', mon2 = 'm';
 	int row_mon1, col_mon1, row_mon2, col_mon2, row_hero, col_hero;
 
 	reset_map(arr);
@@ -38,13 +40,12 @@ int main() {
 
 	print(arr);
 
-	while (row_hero != 15 && col_hero != 15) {
+ 	while (row_hero != 14 && col_hero != 14) {
 
 		reset_map(arr);
 		move_hero(hero, row_hero, col_hero, hero1);
 		printf("d");
-		move_monster(monster1, mon1);
-		move_monster(monster2, mon2);
+		move_monster(monster1, mon1, row_mon1, col_mon1, monster2, mon2, row_mon2, col_mon2);
 
 		row_hero = find_row(hero, hero1);		//주인공 행 좌표
 		col_hero = find_col(hero, hero1);		//주인공 열 좌표
@@ -75,6 +76,8 @@ int main() {
 			break;
 		}
 	}
+	if (row_hero == 14 && col_hero == 14)
+		printf("축하합니다!!");
 }
 
 /////////////////////////////////////main end////////////////////////////////////
@@ -134,12 +137,10 @@ int find_col(char arr[15][15], char target) {
 
 void move_hero(char hero[15][15], int row_hero, int col_hero, char hero1) {
 	int key;
-	//지금 여기 보면 값 받아오기만 하고 바뀐 좌표값을 저장하는게 없음 지역변수로 받아서 메인에 적용 안되는거 같은데
-	//row col 변수가 받아오고 변경은 되는데 함수 안에서만 바뀌는거 같음
 
 	row_hero = find_row(hero, hero1);		//주인공 행 좌표
 	col_hero = find_col(hero, hero1);		//주인공 열 좌표
-	//함수로 만들때는 값이 복사되서 쓰이기만하는거였나 그럼 바뀐값을 저장하던가 반환해야겠네	
+
 	while (1) {
 		key = _getch();
 		if (key != 'W' && key != 'A' && key != 'S' && key != 'D' && key != 'w' && key != 'a' && key != 's' && key != 'd')
@@ -174,7 +175,7 @@ void move_hero(char hero[15][15], int row_hero, int col_hero, char hero1) {
 		case 'd':
 		case 'D':
 			col_hero += 1;
-			hero[row_hero][col_hero = hero1] = hero1;
+			hero[row_hero][col_hero] = hero1;
 			hero[row_hero][col_hero - 1] = '.';
 			break;
 		}
@@ -183,33 +184,75 @@ void move_hero(char hero[15][15], int row_hero, int col_hero, char hero1) {
 	}
 }
 
-void move_monster(char monster[15][15], char mon) {
-	int row, col, n;
+void move_monster(char monster1[15][15], char mon1, int row_mon1, int col_mon1, char monster2[15][15], char mon2, int row_mon2, int col_mon2) {
+	int n, m;
 
-	row = find_row(monster, mon);		//몬스터 행 좌표
-	col = find_col(monster, mon);		//몬스터 열 좌표
+	row_mon1 = find_row(monster1, mon1);		//몬스터 행 좌표
+	col_mon1 = find_col(monster1, mon1);		//몬스터 열 좌표
+	row_mon2 = find_row(monster2, mon2);		//몬스터 행 좌표
+	col_mon2 = find_col(monster2, mon2);		//몬스터 열 좌표
 	while (1) {
+		srand((unsigned)time(NULL));
 		n = rand() % 4;
-		if (row == 0 && n == 0)
+		if (row_mon1 == 0 && n == 0)
 			continue;
-		if (row == 14 && n == 2)
+		if (row_mon1 == 14 && n == 2)
 			continue;
-		if (col == 0 && n == 3)
+		if (col_mon1 == 0 && n == 3)
 			continue;
-		if (col == 14 && n == 1)
+		if (col_mon1 == 14 && n == 1)
+			continue;
+		m = rand() % 4;
+		if (row_mon2 == 0 && m == 0)
+			continue;
+		if (row_mon2 == 14 && m == 2)
+			continue;
+		if (col_mon2 == 0 && m == 3)
+			continue;
+		if (col_mon2 == 14 && m == 1)
 			continue;
 		switch (n) {
 		case 0:
-			row -= 1;
+			row_mon1 -= 1;
+			monster1[row_mon1][col_mon1] = mon1;
+			monster1[row_mon1 + 1][col_mon1] = '.';
 			break;
 		case 1:
-			col += 1;
+			col_mon1 += 1;
+			monster1[row_mon1][col_mon1] = mon1;
+			monster1[row_mon1][col_mon1 - 1] = '.';
 			break;
 		case 2:
-			row += 1;
+			row_mon1 += 1;
+			monster1[row_mon1][col_mon1] = mon1;
+			monster1[row_mon1 - 1][col_mon1] = '.';
 			break;
 		case 3:
-			col -= 1;
+			col_mon1 -= 1;
+			monster1[row_mon1][col_mon1] = mon1;
+			monster1[row_mon1][col_mon1 + 1] = '.';
+			break;
+		}
+		switch (m) {
+		case 0:
+			row_mon2 -= 1;
+			monster2[row_mon2][col_mon2] = mon2;
+			monster2[row_mon2 + 1][col_mon2] = '.';
+			break;
+		case 1:
+			col_mon2 += 1;
+			monster2[row_mon2][col_mon2] = mon2;
+			monster2[row_mon2][col_mon2 - 1] = '.';
+			break;
+		case 2:
+			row_mon2 += 1;
+			monster2[row_mon2][col_mon2] = mon2;
+			monster2[row_mon2 - 1][col_mon2] = '.';
+			break;
+		case 3:
+			col_mon2 -= 1;
+			monster2[row_mon2][col_mon2] = mon2;
+			monster2[row_mon2][col_mon2 + 1] = '.';
 			break;
 		}
 		if (1)
