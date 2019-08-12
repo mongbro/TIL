@@ -51,6 +51,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "연습23", "연습23\연습
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "연습24", "연습24\연습24.vcxproj", "{E1088B58-0733-497D-9E64-74D359DC404B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "연습25", "연습25\연습25.vcxproj", "{BE3211F2-4E68-46C1-B970-E2249C40A4F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -251,6 +253,14 @@ Global
 		{E1088B58-0733-497D-9E64-74D359DC404B}.Release|x64.Build.0 = Release|x64
 		{E1088B58-0733-497D-9E64-74D359DC404B}.Release|x86.ActiveCfg = Release|Win32
 		{E1088B58-0733-497D-9E64-74D359DC404B}.Release|x86.Build.0 = Release|Win32
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Debug|x64.ActiveCfg = Debug|x64
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Debug|x64.Build.0 = Debug|x64
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Debug|x86.ActiveCfg = Debug|Win32
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Debug|x86.Build.0 = Debug|Win32
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Release|x64.ActiveCfg = Release|x64
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Release|x64.Build.0 = Release|x64
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Release|x86.ActiveCfg = Release|Win32
+		{BE3211F2-4E68-46C1-B970-E2249C40A4F8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

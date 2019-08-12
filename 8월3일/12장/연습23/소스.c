@@ -23,7 +23,6 @@ int main() {
 	return 0;
 }
 
-
 void cipher(char* input, char* output) {
 	for (int i = 0; input[i] != NULL; i++) {				//문자열이 끝날때까지 반복
 		if (input[i] >= 'A' && input[i] <= 'z') {			//해당 문자가 A부터 z사이에 있을때
