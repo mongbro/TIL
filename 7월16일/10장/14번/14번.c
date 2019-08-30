@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<windows.h>
 
 void print(char a[15][15]);	//15 * 15 배열을 출력하는 함수
 void rand_number(char a[15][15], int b, int n, int m);	//8개의 난수를 결정 함수
@@ -29,6 +30,7 @@ int main() {
 		}
 		if (op == 'N' || op == 'n')
 			break;
+		system("cls");
 		srand((unsigned)time(NULL));
 		rand_number(arr, rand_num, n, m);	//벌레의 이동방향을 정한다.
 		print(arr);

@@ -10,7 +10,7 @@ int main() {
 			arr[i][j] = '.';
 		}
 	}
-	while(count<10) {
+	while(count<30) {
 		srand((unsigned)time(NULL));
 		n = rand() % 10;
 		m = rand() % 10;		//10*10배열 중 하나를 갖는 한 쌍의 좌표 * 10
