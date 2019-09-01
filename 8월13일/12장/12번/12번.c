@@ -18,12 +18,14 @@ int main() {
 void change(char* str) {
 	char* token;
 	char name[2][100];
+
 	for (int i = 0; str[i] != NULL; i++) {
 		if (isupper(str[i]))
 			str[i] = tolower(str[i]);
 	}
 	
 	token = strtok(str, " ");
+
 	for (int i = 0; token != NULL; i++) {
 		strcpy(name[i], token);
 		token = strtok(NULL, " ");

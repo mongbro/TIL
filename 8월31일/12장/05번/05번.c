@@ -4,7 +4,7 @@
 
 int main() {
 	char c;
-	char t;
+	char t=0;
 
 	while (1) {
 	printf("문자를 입력하시오 : ");
