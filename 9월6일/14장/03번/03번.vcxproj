@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{88E47FF1-55C8-4CCB-9D03-AA0E6B0D1674}</ProjectGuid>
-    <RootNamespace>My01번2</RootNamespace>
+    <ProjectGuid>{00B2DA3A-302B-4797-A29A-464A25AA3FFB}</ProjectGuid>
+    <RootNamespace>My03번</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,7 +74,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>false</SDLCheck>
+      <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="01번-2.c" />
+    <ClCompile Include="03번.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mong.h" />
