@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include"skill.h"
 #include"item.h"
+#include"map.h"
 
 typedef struct charac {
 	char name[20];
