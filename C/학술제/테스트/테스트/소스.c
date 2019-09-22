@@ -1,35 +1,40 @@
 #include<stdio.h>
+#include<windows.h>
+#include<conio.h>
+#include"map.h"
 
-#define WALL 1
-#define MAIN_X 30
-#define MAIN_Y 30
+void gotoxy(int x, int y);
 
-int map[MAIN_Y][MAIN_X] = { 0 };
-
-void initial_map();
-void print_map();
-
-int main()
-{
-	initial_map();
-	print_map();
-}
-
-void initial_map() {
-	for (int i = 0; i < MAIN_Y; i++) {
-		for (int j = 0; j < MAIN_X; j ++) {
-			map[0][j] = WALL;
-			map[MAIN_Y - 1][j] = WALL;
+int main() {
+	int x = 0, y = 0;
+	char input = 0;
+	while (1) {
+		gotoxy(x, y);
+		printf("_");
+		print_map();
+		if (_kbhit()) {
+			input = _getch();
+			switch (input) {
+			case 'w':
+				y--;
+				break;
+			case 'a':
+				x--;
+				break;
+			case 's':
+				y++;
+				break;
+			case 'd':
+				x++;
+				break;
+			}
+			Sleep(50);
+			system("cls");
 		}
 	}
 }
 
-void print_map() {
-	for (int i = 0; i < MAIN_Y; i++) {
-		for (int j = 0; j < MAIN_X; j++) {
-			printf("%d", map[i][j]);
-		}
-		printf("\n");
-		printf("\n");
-	}
+void gotoxy(int x, int y){
+	COORD pos = { x,y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
