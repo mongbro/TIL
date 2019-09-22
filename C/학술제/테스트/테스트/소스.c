@@ -30,5 +30,6 @@ void print_map() {
 			printf("%d", map[i][j]);
 		}
 		printf("\n");
+		printf("\n");
 	}
 }
