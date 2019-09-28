@@ -15,12 +15,11 @@ void print_map(CHA clist[3], MON mlist[3]);
 void print_hp(CHA clist[3], MON mlist[3]);
 void dungeon(CHA clist[3], MON mlist[3]);
 void prologue0();
-void prologue1(CHA clist[3], MON mlist[3]);
 void prologue2(CHA clist[3], MON mlist[3]);
-void prologue3(CHA clist[3], MON mlist[3]);
-void prologue4(CHA clist[3], MON mlist[3]);
-void prologue5(CHA clist[3], MON mlist[3]);
-void prologue6(CHA clist[3], MON mlist[3]);
+void c0_choice(CHA clist[3], MON mlist[3]);
+void c1_choice(CHA clist[3], MON mlist[3]);
+void c2_choice(CHA clist[3], MON mlist[3]);
+void c0_attack(CHA clist[3], MON mlist[3]);
 
 void print_line() {
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
@@ -40,9 +39,9 @@ void print_map(CHA clist[3], MON mlist[3]) {
 }
 
 void print_hp(CHA clist[3], MON mlist[3]) {
-	printf("  %s의 체력 : %3d \/ %3d                                        ○                                     %s의 체력 : %3d \/ %3d\n", clist[0].name, clist[0].hp, clist[0].fhp, mlist[0].name, mlist[0].hp, mlist[0].fhp);
-	printf("  %s의 체력 : %3d \/ %3d                                        ○                                     %s의 체력 : %3d \/ %3d\n", clist[1].name, clist[1].hp, clist[1].fhp, mlist[1].name, mlist[1].hp, mlist[1].fhp);
-	printf("  %s의 체력 : %3d \/ %3d                                        ○                                     %s의 체력 : %3d \/ %3d\n", clist[2].name, clist[2].hp, clist[2].fhp, mlist[2].name, mlist[2].hp, mlist[2].fhp);
+	printf("  %s의 체력 : %3d / %3d                                        ○                                     %s의 체력 : %3d / %3d\n", clist[0].name, clist[0].hp, clist[0].fhp, mlist[0].name, mlist[0].hp, mlist[0].fhp);
+	printf("  %s의 체력 : %3d / %3d                                        ○                                     %s의 체력 : %3d / %3d\n", clist[1].name, clist[1].hp, clist[1].fhp, mlist[1].name, mlist[1].hp, mlist[1].fhp);
+	printf("  %s의 체력 : %3d / %3d                                        ○                                     %s의 체력 : %3d / %3d\n", clist[2].name, clist[2].hp, clist[2].fhp, mlist[2].name, mlist[2].hp, mlist[2].fhp);
 	printf("\n");
 }
 
@@ -76,11 +75,23 @@ void hit1() {
 	print_line();
 	print_line();
 	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
+	print_line();
 }
 
 void hit2() {
 	system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n");
 }
 
 void event_hit() {
@@ -90,6 +101,8 @@ void event_hit() {
 	hit2();
 	hit1();
 	hit2();
+	hit1();
+	hit2();	
 	hit1();
 	hit2();
 }
@@ -103,6 +116,7 @@ void prologue0() {
 		if (_getch())
 			break;
 	}
+
 	while (1) {
 		system("cls");
 		print_line();
@@ -111,6 +125,7 @@ void prologue0() {
 		if (_getch())
 			break;
 	}
+
 	while (1) {
 		system("cls");
 		print_line();
@@ -119,6 +134,7 @@ void prologue0() {
 	if (_getch())
 		break;
 	}
+
 	while (1) {
 		system("cls");
 		print_line();
@@ -127,34 +143,7 @@ void prologue0() {
 	if (_getch())
 		break;
 	}
-	
-}
 
-void prologue1(CHA clist[3], MON mlist[3]) {
-	while (1) {
-		char a;
-		system("cls");
-		print_line();
-		print_map(clist, mlist);
-		print_line();
-		printf("\n");
-		print_hp(clist, mlist);
-		print_line();
-		printf("\n");
-		printf("  1. %s                     = %s를 선택합니다.\n", clist[0].name, clist[0].name);
-		printf("  2. %s                     = %s를 선택합니다.\n", clist[1].name, clist[1].name);
-		printf("  3. %s                     = %s를 선택합니다.\n", clist[2].name, clist[2].name);
-		printf("\n\n  계속 하시려면 \'1\'을 누르세요.\n");
-		print_line();
-		a = _getch();
-		if (a == '1')
-			break;
-		else
-			continue;
-	}
-}
-
-void prologue2(CHA clist[3], MON mlist[3]) {
 	while (1) {
 		char a;
 		system("cls");
@@ -179,9 +168,7 @@ void prologue2(CHA clist[3], MON mlist[3]) {
 		else
 			continue;
 	}
-}
 
-void prologue3(CHA clist[3], MON mlist[3]) {
 	while (1) {
 		char a;
 		system("cls");
@@ -203,9 +190,7 @@ void prologue3(CHA clist[3], MON mlist[3]) {
 		else
 			continue;
 	}
-}
 
-void prologue4(CHA clist[3], MON mlist[3]) {
 	while (1) {
 		char a;
 		system("cls");
@@ -228,9 +213,9 @@ void prologue4(CHA clist[3], MON mlist[3]) {
 		else
 			continue;
 	}
-}
 
-void prologue5(CHA clist[3], MON mlist[3]) {
+	event_hit();
+
 	while (1) {
 		system("cls");
 		print_line();
@@ -246,7 +231,181 @@ void prologue5(CHA clist[3], MON mlist[3]) {
 		printf("\n\n");
 		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
 		print_line();
-		if(_getch())
+		if (_getch())
 			break;
+	}
+}
+
+void prologue2(CHA clist[3], MON mlist[3]) {
+
+}
+
+void c0_choice(CHA clist[3], MON mlist[3]) {
+	while (1) {
+		char a;
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  %s의 기술!!                                                   = 공격하는 아군 캐릭터의 이름입니다.\n\n", clist[0].name);
+		printf("  1. 기본공격                                                     = 캐릭터의 기본 공격을 합니다.\n");
+		printf("  2. 스킬                                                         = 캐릭터의 스킬을 선택합니다.\n");
+
+		printf("  3. 아이템                                                       = 인벤토리에서 사용 가능한 아이템을 선택합니다.\n");
+		printf("  4. 도망치기!                                                    = 이번 스테이지는 포기합니다.\n");
+		printf("\n\n  계속 하시려면 '2'를 누르세요.\n");
+		print_line();
+		a = _getch();
+		if (a == '1')
+			c0_attack(clist, mlist);
+		if (a == '2')
+			c1_attack(clist, mlist);
+		if (a == '3')
+			c2_attack(clist, mlist);		
+		else
+			continue;
+	}
+}
+
+void c1_choice(CHA clist[3], MON mlist[3]) {
+	while (1) {
+		char a;
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  %s의 기술!!                                                   = 공격하는 아군 캐릭터의 이름입니다.\n\n", clist[1].name);
+		printf("  1. 기본공격                                                     = 캐릭터의 기본 공격을 합니다.\n");
+		printf("  2. 스킬                                                         = 캐릭터의 스킬을 선택합니다.\n");
+		printf("  3. 아이템                                                       = 인벤토리에서 사용 가능한 아이템을 선택합니다.\n");
+		printf("  4. 도망치기!                                                    = 이번 스테이지는 포기합니다.\n");
+		printf("\n\n  계속 하시려면 '2'를 누르세요.\n");
+		print_line();
+		a = _getch();
+		if (a == '1')
+			
+		else
+			continue;
+	}
+}
+
+void c2_choice(CHA clist[3], MON mlist[3]) {
+	while (1) {
+		char a;
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  %s의 기술!!                                                   = 공격하는 아군 캐릭터의 이름입니다.\n\n", clist[2].name);
+		printf("  1. 기본공격                                                     = 캐릭터의 기본 공격을 합니다.\n");
+		printf("  2. 스킬                                                         = 캐릭터의 스킬을 선택합니다.\n");
+		printf("  3. 아이템                                                       = 인벤토리에서 사용 가능한 아이템을 선택합니다.\n");
+		printf("  4. 도망치기!                                                    = 이번 스테이지는 포기합니다.\n");
+		printf("\n\n  계속 하시려면 '2'를 누르세요.\n");
+		print_line();
+		a = _getch();
+		if (a == '1')
+			
+		else
+			continue;
+	}
+}
+
+void c0_attack(CHA clist[3], MON mlist[3]) {
+	while (1) {
+		char a;
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  %s의 공격!!                                              = 선택한 캐릭터의 공격!\n\n", clist[0].name);
+		printf("  1. %s                                                        = %s을 공격합니다.\n", mlist[0].name, mlist[0].name);
+		printf("  2. %s                                                        = %s을 공격합니다.\n", mlist[1].name, mlist[1].name);
+		printf("  3. %s                                                        = %s을 공격합니다.\n", mlist[2].name, mlist[2].name);
+		printf("\n\n  공격할 적을 선택하세요.\n");
+		print_line();
+		a = _getch();
+		if (a == '1')
+			damage_character_to_monster(clist, mlist, 0, 0, 0);
+		if (a == '2')
+			damage_character_to_monster(clist, mlist, 0, 1, 0);
+		if (a == '3')
+			damage_character_to_monster(clist, mlist, 0, 2, 0);
+		else
+			continue;
+	}
+}
+
+void c1_attack(CHA clist[3], MON mlist[3]) {
+	while (1) {
+		char a;
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  %s의 공격!!                                              = 선택한 캐릭터의 공격!\n\n", clist[1].name);
+		printf("  1. %s                                                        = %s을 공격합니다.\n", mlist[0].name, mlist[0].name);
+		printf("  2. %s                                                        = %s을 공격합니다.\n", mlist[1].name, mlist[1].name);
+		printf("  3. %s                                                        = %s을 공격합니다.\n", mlist[2].name, mlist[2].name);
+		printf("\n\n  공격할 적을 선택하세요.\n");
+		print_line();
+		a = _getch();
+		if (a == '1')
+			damage_character_to_monster(clist, mlist, 1, 0, 0);
+		if (a == '2')
+			damage_character_to_monster(clist, mlist, 1, 1, 0);
+		if (a == '3')
+			damage_character_to_monster(clist, mlist, 1, 2, 0);
+		else
+			continue;
+	}
+}
+
+void c2_attack(CHA clist[3], MON mlist[3]) {
+	while (1) {
+		char a;
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  %s의 공격!!                                              = 선택한 캐릭터의 공격!\n\n", clist[2].name);
+		printf("  1. %s                                                        = %s을 공격합니다.\n", mlist[0].name, mlist[0].name);
+		printf("  2. %s                                                        = %s을 공격합니다.\n", mlist[1].name, mlist[1].name);
+		printf("  3. %s                                                        = %s을 공격합니다.\n", mlist[2].name, mlist[2].name);
+		printf("\n\n  공격할 적을 선택하세요.\n");
+		print_line();
+		a = _getch();
+		if (a == '1')
+			damage_character_to_monster(clist, mlist, 2, 0, 0);
+		if (a == '2')
+			damage_character_to_monster(clist, mlist, 2, 1, 0);
+		if (a == '3')
+			damage_character_to_monster(clist, mlist, 2, 2, 0);
+		else
+			continue;
 	}
 }
