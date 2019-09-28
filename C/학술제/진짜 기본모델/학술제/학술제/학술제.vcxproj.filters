@@ -26,9 +26,6 @@
     <ClInclude Include="start_display.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="charator.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="skill.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -39,6 +36,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="exp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="combet.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="character.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -126,7 +126,9 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="charator.h" />
+    <ClInclude Include="character.h" />
+    <ClInclude Include="combet.h" />
+    <ClInclude Include="exp.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="menu.h" />

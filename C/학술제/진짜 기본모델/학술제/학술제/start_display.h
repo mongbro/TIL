@@ -4,11 +4,12 @@
 #include<windows.h>
 #include<stdlib.h>
 #include<ctype.h>
+#include<conio.h>
 
 void print_initial_disp();
 
 void print_initial_disp() {
-	int n;
+	char a;
 	while (1) {
 		system("cls");
 		printf("\n\n\n");
@@ -37,13 +38,13 @@ void print_initial_disp() {
 		printf("                                                       2. 게임 종료\n\n\n");
 		printf("                                            ┌──────────────────────────────────┐\n");
 		printf("                                            │  원하는 메뉴의 숫자를 입력하세요 │\n");
-		scanf("%d", &n);
-		if (n == 1)
+
+		a = _getch();
+		if (a == '1')
 			break;
-		if (n == 2)
-			exit(1);
-		if (isdigit(n) == 0) {
+		if (a == '2')
+			exit(0);
+		else
 			continue;
-		}
 	}
 }

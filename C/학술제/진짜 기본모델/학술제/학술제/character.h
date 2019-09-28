@@ -21,8 +21,8 @@ typedef struct charac {
 	int readership;					//리더십 : 공격력 관련 스텟
 	int noteship;					//필기력 : 방어력 관련 스텟
 	int wealth;						//부 : 마나 관련 스텟      
-	int damage;						// 예시 => (double)(att * (readership / 10))
-	int protect;					// 예시 => (double)(def * (noteship / 10))
+	double damage;					// 예시 => (double)(att * (readership / 10))
+	double protect;					// 예시 => (double)(def * (noteship / 10))
 	int spare_stat;
 }CHA;
 
@@ -48,11 +48,11 @@ void initial_charac(CHA clist[3], SKILL slist[30]) {
 		clist[i].noteship = rand() % 5 + 5;
 		clist[i].wealth = rand() % 5 + 5;
 		if (clist[i].readership >= 10)
-			clist[i].damage = clist[i].att * clist[i].readership / 10;
+			clist[i].damage = clist[i].att * (double)clist[i].readership / 10;
 		else
 			clist[i].damage = clist[i].att;
 		if (clist[i].noteship >= 10)
-			clist[i].protect = clist[i].def * clist[i].noteship / 10;
+			clist[i].protect = clist[i].def * (double)clist[i].noteship / 10;
 		else
 			clist[i].protect = clist[i].def;
 		clist[i].spare_stat = 0;
