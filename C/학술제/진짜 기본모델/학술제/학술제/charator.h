@@ -10,7 +10,7 @@
 typedef struct charac {
 	char name[20];
 	ITEM item[2];
-	SKILL skill[2];
+	SKILL skill[3];
 	EXP exp[11];
 	int fhp;						//รั hp
 	int fmp;						//รั mp
@@ -59,4 +59,5 @@ void initial_charac(CHA clist[3], SKILL slist[30]) {
 	}
 	clist[0].skill[0] = slist[0];
 	clist[0].skill[1] = slist[1];
+	clist[0].skill[2] = slist[2];
 }

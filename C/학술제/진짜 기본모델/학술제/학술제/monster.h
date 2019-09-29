@@ -11,9 +11,9 @@ typedef struct monster {
 	int mp;			//남은 mp
 	int att;
 	int def;
+	int condition;				//0일 경우 살아있음, 1일경우 죽어있음
+	int mexp;
 }MON;
-
-void prologue_monster(MON mlist[3]);
 
 MON mlist[3] = { 0 };
 
@@ -29,5 +29,7 @@ void prologue_monster(MON mlist[3]) {
 		mlist[i].mp = 10;
 		mlist[i].att = 10;
 		mlist[i].def = 10;
+		mlist[i].condition = 0;
+		mlist[i].mexp = 50;
 	}
 }

@@ -134,6 +134,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="monster.h" />
     <ClInclude Include="skill.h" />
+    <ClInclude Include="stage.h" />
     <ClInclude Include="start_display.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

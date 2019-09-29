@@ -10,7 +10,7 @@
 typedef struct charac {
 	char name[20];
 	ITEM item[2];
-	SKILL skill[2];
+	SKILL skill[3];
 	EXP exp[11];
 	int fhp;						//총 hp
 	int fmp;						//총 mp
@@ -23,6 +23,7 @@ typedef struct charac {
 	int wealth;						//부 : 마나 관련 스텟      
 	double damage;					// 예시 => (double)(att * (readership / 10))
 	double protect;					// 예시 => (double)(def * (noteship / 10))
+	int condition;				//0일 경우 살아있음, 1일경우 죽어있음
 	int spare_stat;
 }CHA;
 
@@ -55,8 +56,10 @@ void initial_charac(CHA clist[3], SKILL slist[30]) {
 			clist[i].protect = clist[i].def * (double)clist[i].noteship / 10;
 		else
 			clist[i].protect = clist[i].def;
+		clist[i].condition = 0;
 		clist[i].spare_stat = 0;
 	}
 	clist[0].skill[0] = slist[0];
 	clist[0].skill[1] = slist[1];
+	clist[0].skill[2] = slist[2];
 }
