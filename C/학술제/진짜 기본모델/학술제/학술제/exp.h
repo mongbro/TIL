@@ -2,10 +2,10 @@
 #include<stdio.h>
 
 typedef struct experiment {
-	int level;		//캐릭터 레벨
-	int fexp;		//레벨당 풀경험치
-	int exp;		//캐릭터의 현재 경험치
-	int persent;	//현재 경험치/풀경험치
+	int level;
+	int fexp;
+	int exp;
+	int persent;
 }EXP;
 
 void initial_exp();
