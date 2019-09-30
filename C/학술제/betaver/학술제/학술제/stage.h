@@ -20,7 +20,7 @@ void prologue_stage() {
 		stlist[0].drop_item[i] = dilist[i];
 	}
 	for (int i = 0; i < 10; i++) {
-		if (stlist[0].drop_item->name != 0)
+		if (stlist[0].drop_item[i].check == 1)
 			stlist[0].num_item++;
 	}
 }

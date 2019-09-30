@@ -10,6 +10,7 @@ typedef struct item {
 	int add_hp;
 	int add_mp;
 	int num;				//해당 아이템의 개수
+	int check;				//확인할거
 }ITEM;
 
 int gold = 0;
@@ -63,4 +64,9 @@ void prologue_ditem(ITEM dilist[10]) {
 	dilist[2].num = 0;
 	dilist[3].add_hp = 20;
 	dilist[4].add_mp = 20;
+	dilist[0].check = 1;
+	dilist[1].check = 1;
+	dilist[2].check = 1;
+	dilist[3].check = 1;
+	dilist[4].check = 1;
 }

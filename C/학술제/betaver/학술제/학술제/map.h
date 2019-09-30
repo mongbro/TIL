@@ -253,7 +253,7 @@ void prologue0() {
 		printf("  1. %s                                                        = %s스킬로 %s을 공격합니다.\n", mlist[0].name, clist[0].skill[1].name, mlist[0].name);
 		printf("  2. %s                                                        = %s스킬로 %s을 공격합니다.\n", mlist[1].name, clist[0].skill[1].name, mlist[1].name);
 		printf("  3. %s                                                        = %s스킬로 %s을 공격합니다.\n", mlist[2].name, clist[0].skill[1].name, mlist[2].name);
-		printf("\n\n  계속 하시려면 '3'를 누르세요.\n");
+		printf("\n\n  계속 하시려면 '3'을 누르세요.\n");
 		print_line();
 		a = _getch();
 		if (a == '3')
@@ -275,7 +275,7 @@ void prologue0() {
 		print_line();
 		printf("\n");
 		printf("  %s의 %s 스킬!!                                              = 선택한 캐릭터의 스킬입니다.\n\n", clist[0].name, clist[0].skill[1].name);
-		printf("  %s가 %d의 데미지를 입음!!!                                   = %s가 %d의 데미지를 입었습니다.\n", mlist[2].name, hit_damage, mlist[2].name, hit_damage);
+		printf("  %s가 %d의 데미지를 입음!!!                                   = %s이(가) %d의 데미지를 입었습니다.\n", mlist[2].name, hit_damage, mlist[2].name, hit_damage);
 		kill_monster(clist, mlist, stlist, 0, 0);
 		printf("\n\n");
 		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
@@ -299,7 +299,7 @@ void prologue0() {
 		printf("  2. 스킬                                                         = 캐릭터의 스킬을 선택합니다.\n");
 		printf("  3. 아이템                                                       = 인벤토리에서 사용 가능한 아이템을 선택합니다.\n");
 		printf("  4. 도망치기!                                                    = 이번 스테이지는 포기합니다.\n");
-		printf("\n\n  계속 하시려면 '1'를 누르세요.\n");
+		printf("\n\n  계속 하시려면 '1'을 누르세요.\n");
 		print_line();
 		printf("\n    ※조장은 공격에 특화(딜러)되어있고, 서기는 방어(탱커), 지갑은 회복에 특화(힐러)되어 있습니다.");
 		a = _getch();
@@ -323,7 +323,7 @@ void prologue0() {
 		printf("  1. %s                                                        = %s을 공격합니다.\n", mlist[0].name, mlist[0].name);
 		printf("  2. %s                                                        = %s을 공격합니다.\n", mlist[1].name, mlist[1].name);
 		printf("  3. %s                                                        = %s을 공격합니다.\n", mlist[2].name, mlist[2].name);
-		printf("\n\n  계속 하시려면 '3'를 누르세요.\n");
+		printf("\n\n  계속 하시려면 '3'을 누르세요.\n");
 		print_line();
 		damage_character_to_monster(clist, mlist, 1, 2, 0);
 		a = _getch();
@@ -345,8 +345,8 @@ void prologue0() {
 		print_line();
 		printf("\n");
 		printf("  %s의 공격!!                                                   = 선택한 캐릭터입니다.\n\n", clist[1].name);
-		printf("  %s가 %d의 데미지를 입음!!!                                   = %s가 %d의 데미지를 입었습니다.\n", mlist[2].name, hit_damage, mlist[2].name, hit_damage);
-		kill_monster(clist, mlist, stlist, 1, 0);
+		printf("  %s이(가) %d의 데미지를 입음!!!                                   = %s이(가) %d의 데미지를 입었습니다.\n", mlist[2].name, hit_damage, mlist[2].name, hit_damage);
+		prologue_kill_monster(clist, mlist, stlist, 1, 0);
 		printf("\n\n");
 		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
 		print_line();
@@ -369,7 +369,7 @@ void prologue0() {
 		printf("  2. 스킬                                                         = 캐릭터의 스킬을 선택합니다.\n");
 		printf("  3. 아이템                                                       = 인벤토리에서 사용 가능한 아이템을 선택합니다.\n");
 		printf("  4. 도망치기!                                                    = 이번 스테이지는 포기합니다.\n");
-		printf("\n\n  계속 하시려면 '1'를 누르세요.\n");
+		printf("\n\n  계속 하시려면 '1'을 누르세요.\n");
 		print_line();
 		printf("\n    ※각자 특성은 있지만 모두 기본공격은 할 수 있습니다.");
 		a = _getch();
@@ -424,7 +424,7 @@ void prologue0() {
 		print_line();
 		printf("\n");
 		printf("  %s의 공격!!                                                   = 선택한 캐릭터입니다.\n\n", clist[2].name);
-		printf("  %s가 %d의 데미지를 입음!!!                                   = %s가 %d의 데미지를 입었습니다.\n", mlist[1].name, hit_damage, mlist[1].name, hit_damage);
+		printf("  %s이(가) %d의 데미지를 입음!!!                                   = %s이(가) %d의 데미지를 입었습니다.\n", mlist[1].name, hit_damage, mlist[1].name, hit_damage);
 		kill_monster(clist, mlist, stlist, 2, 0);
 		printf("\n\n");
 		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
@@ -447,7 +447,7 @@ void prologue0() {
 			print_hp(clist, mlist);
 			print_line();
 			printf("\n");
-			printf("  %s가 %s를 공격!!                                              = 선택된 몬스터입니다.\n\n", mlist[0].name, clist[who].name);
+			printf("  %s이(가) %s을(를) 공격!!                                              = 선택된 몬스터입니다.\n\n", mlist[0].name, clist[who].name);
 			printf("\n\n");
 			printf("\n\n");
 			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
@@ -469,7 +469,7 @@ void prologue0() {
 			print_line();
 			printf("\n");
 			printf("\n\n");
-			printf("  %s가 %d의 데미지를 입음!!!                                   = %s가 %d의 데미지를 입었습니다.\n", clist[who].name, hit_damage, clist[who].name, hit_damage);
+			printf("  %s이(가) %d의 데미지를 입음!!!                                   = %s이(가) %d의 데미지를 입었습니다.\n", clist[who].name, hit_damage, clist[who].name, hit_damage);
 			kill_character(clist, mlist, stlist, 0);
 			printf("\n\n");
 			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
@@ -491,7 +491,7 @@ void prologue0() {
 			print_hp(clist, mlist);
 			print_line();
 			printf("\n");
-			printf("  %s가 %s를 공격!!                                              = 선택된 몬스터입니다.\n\n", mlist[1].name, clist[who].name);
+			printf("  %s이(가) %s을(를) 공격!!                                              = 선택된 몬스터입니다.\n\n", mlist[1].name, clist[who].name);
 			printf("\n\n");
 			printf("\n\n");
 			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
@@ -513,7 +513,7 @@ void prologue0() {
 			print_line();
 			printf("\n");
 			printf("\n\n");
-			printf("  %s가 %d의 데미지를 입음!!!                                   = %s가 %d의 데미지를 입었습니다.\n", clist[who].name, hit_damage, clist[who].name, hit_damage);
+			printf("  %s이(가) %d의 데미지를 입음!!!                                   = %s이(가) %d의 데미지를 입었습니다.\n", clist[who].name, hit_damage, clist[who].name, hit_damage);
 			kill_character(clist, mlist, stlist, 1);
 			printf("\n\n");
 			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
