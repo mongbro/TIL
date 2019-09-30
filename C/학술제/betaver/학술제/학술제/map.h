@@ -20,6 +20,8 @@ void c_choice(CHA clist[3], MON mlist[3], int cnum);
 void c_attack(CHA clist[3], MON mlist[3], int cnum);
 void cs_attack(CHA clist[3], MON mlist[3], int cnum, int snum);
 void c_skill(CHA clist[3], MON mlist[3], int cnum);
+void turn_player();
+void turn_monster();
 
 void print_line() {
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
@@ -187,6 +189,8 @@ void prologue0() {
 		if (_getch())
 			break;
 	}
+
+	turn_player();
 
 	while (1) {
 		char a;
@@ -389,15 +393,15 @@ void prologue0() {
 		if (mlist[0].hp > 0)
 			printf("  1. %s                                                        = %s을 공격합니다.\n", mlist[0].name, mlist[0].name);
 		if (mlist[0].hp <= 0)
-			printf("  1.                                                              \n");
+			printf("                                                                \n");
 		if (mlist[1].hp > 0)
 			printf("  2. %s                                                        = %s을 공격합니다.\n", mlist[1].name, mlist[1].name);
 		if (mlist[1].hp <= 0)
-			printf("  2.                                                              \n");
+			printf("                                                                \n");
 		if (mlist[2].hp > 0)
 			printf("  3. %s                                                        = %s을 공격합니다.\n", mlist[2].name, mlist[2].name);
 		if (mlist[2].hp <= 0)
-			printf("  3.                                                              \n");
+			printf("                                                                \n");
 		printf("\n\n  계속 하시려면 '2'를 누르세요.\n");
 		print_line();
 		damage_character_to_monster(clist, mlist, 2, 1, 0);
@@ -429,8 +433,8 @@ void prologue0() {
 			break;
 	}
 
-
-
+	turn_monster();
+	
 	{
 		int who;
 		who = choice_monster_to_character();
@@ -474,6 +478,54 @@ void prologue0() {
 				break;
 		}
 	}
+
+	{
+		int who;
+		who = choice_monster_to_character();
+		while (1) {
+			system("cls");
+			print_line();
+			print_map(clist, mlist);
+			print_line();
+			printf("\n");
+			print_hp(clist, mlist);
+			print_line();
+			printf("\n");
+			printf("  %s가 %s를 공격!!                                              = 선택된 몬스터입니다.\n\n", mlist[1].name, clist[who].name);
+			printf("\n\n");
+			printf("\n\n");
+			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+			damage_monster_to_character(clist, mlist, who, 1);
+			print_line();
+			if (_getch())
+				break;
+		}
+
+		event_hit();
+
+		while (1) {
+			system("cls");
+			print_line();
+			print_map(clist, mlist);
+			print_line();
+			printf("\n");
+			print_hp(clist, mlist);
+			print_line();
+			printf("\n");
+			printf("\n\n");
+			printf("  %s가 %d의 데미지를 입음!!!                                   = %s가 %d의 데미지를 입었습니다.\n", clist[who].name, hit_damage, clist[who].name, hit_damage);
+			kill_character(clist, mlist, stlist, 1);
+			printf("\n\n");
+			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+			print_line();
+			if (_getch())
+				break;
+		}
+	}
+
+	turn_player();
+
+
 }
 
 ////////////////////////////////////////////////////////////   여기까지 프롤로그   ////////////////////////////////////////////////////////////
@@ -602,5 +654,49 @@ void c_skill(CHA clist[3], MON mlist[3], int cnum) {
 			cs_attack(clist, mlist, cnum, 2);
 		else
 			continue;
+	}
+}
+
+void turn_player() {
+	while (1) {
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  플레이어의 턴!!\n\n");
+		printf("  플레이어의 턴입니다!!\n");
+		printf("  \n");
+		printf("\n\n\n");
+		print_line();
+		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+		print_line();
+		if (_getch())
+			break;
+	}
+}
+
+void turn_monster() {
+	while (1) {
+		system("cls");
+		print_line();
+		print_map(clist, mlist);
+		print_line();
+		printf("\n");
+		print_hp(clist, mlist);
+		print_line();
+		printf("\n");
+		printf("  몬스터의 턴!!\n\n");
+		printf("  몬스터의 턴입니다!!\n");
+		printf("  \n");
+		printf("\n\n\n");
+		print_line();
+		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+		print_line();
+		if (_getch())
+			break;
 	}
 }

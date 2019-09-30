@@ -15,9 +15,9 @@ STAGE stlist[6] = { 0 };
 void prologue_stage() {
 	stlist[0].num_item = 0;
 	prologue_monster(mlist);
-	prologue_item(ditem);
+	prologue_ditem(dilist);
 	for (int i = 0; i < 10; i++) {
-		stlist[0].drop_item[i] = ditem[i];
+		stlist[0].drop_item[i] = dilist[i];
 	}
 	for (int i = 0; i < 10; i++) {
 		if (stlist[0].drop_item->name != 0)

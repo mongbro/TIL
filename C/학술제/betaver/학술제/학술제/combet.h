@@ -104,7 +104,7 @@ void kill_monster(CHA clist[3], MON mlist[3], STAGE stlist[6], int cnum, int stn
 	srand((unsigned)time(NULL));
 	int add_gold = rand() % 10 + 1;
 	int chance_drop = rand() % 3;		//33%확률로 드랍 => 0일때 드랍
-	int item_num;;
+	int item_num;
 	for (int i = 0; i < 3; i++) {
 		if (mlist[i].hp <= 0 && mlist[i].condition == 0) {
 			printf("\n\n  %s가 죽었습니다!!        %s가 %d의 골드를 드랍했습니다!!\n", mlist[i].name, mlist[i].name, add_gold);
