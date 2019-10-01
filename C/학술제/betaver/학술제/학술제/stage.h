@@ -1,5 +1,8 @@
+// made by ±Ë¡æ¿∫
+
 #pragma once
 #include<stdio.h>
+#include<string.h>
 #include"item.h"
 #include"monster.h"
 
@@ -17,6 +20,7 @@ void prologue_stage() {
 	prologue_monster(mlist);
 	prologue_ditem(dilist);
 	for (int i = 0; i < 10; i++) {
+		stlist[0].drop_item[i] = emptylist[i];
 		stlist[0].drop_item[i] = dilist[i];
 	}
 	for (int i = 0; i < 10; i++) {

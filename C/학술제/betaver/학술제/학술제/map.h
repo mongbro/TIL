@@ -1,3 +1,5 @@
+// made by 김종은
+
 #pragma once
 #include<stdio.h>
 #include<windows.h>
@@ -345,7 +347,7 @@ void prologue0() {
 		print_line();
 		printf("\n");
 		printf("  %s의 공격!!                                                   = 선택한 캐릭터입니다.\n\n", clist[1].name);
-		printf("  %s이(가) %d의 데미지를 입음!!!                                   = %s이(가) %d의 데미지를 입었습니다.\n", mlist[2].name, hit_damage, mlist[2].name, hit_damage);
+		printf("  %s이(가) %d의 데미지를 입음!!!                               = %s이(가) %d의 데미지를 입었습니다.\n", mlist[2].name, hit_damage, mlist[2].name, hit_damage);
 		prologue_kill_monster(clist, mlist, stlist, 1, 0);
 		printf("\n\n");
 		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");

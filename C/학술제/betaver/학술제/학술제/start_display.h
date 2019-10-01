@@ -1,4 +1,5 @@
-#pragma once
+// made by ±Ë¡æ¿∫
+
 #pragma once
 #include<stdio.h>
 #include<windows.h>

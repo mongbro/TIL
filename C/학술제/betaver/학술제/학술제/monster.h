@@ -1,3 +1,5 @@
+// made by ±èÁÖÀ± & ¼±Á¾¹ü
+
 #pragma once
 #include<stdio.h>
 #include<string.h>

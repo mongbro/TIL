@@ -123,7 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="character.c" />
+    <ClCompile Include="combet.c" />
+    <ClCompile Include="exp.c" />
+    <ClCompile Include="item.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="map.c" />
+    <ClCompile Include="menu.c" />
+    <ClCompile Include="monster.c" />
+    <ClCompile Include="skill.c" />
+    <ClCompile Include="stage.c" />
+    <ClCompile Include="start_display.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h" />
