@@ -23,6 +23,7 @@ void dun_inventory(CHA clist[3]);
 void dun_inf_cha(CHA clist[3]);
 void dun_inf_mon(MON mlist[3]);
 void use_item(CHA clist[3], ITEM ilist[40], int inum);
+void effect_item(CHA clist[3], ITEM ilist[40], int cnum, int inum);
 
 void dun_menu(CHA clist[3], MON mlist[3]) {
 	while (1) {
@@ -398,6 +399,7 @@ void dun_inventory(CHA clist[3]) {
 				if (ilist[i].ea > 0) {
 					printf("  %d. %s                   hp 회복 : %d    mp 회복 : %d    남은 개수 : %d\n\n", index, ilist[i].name, ilist[i].add_hp, ilist[i].add_mp, ilist[i].ea);
 					n[i] = i;
+					ilist[i].index = index;
 					index++;
 				}
 			
@@ -405,56 +407,68 @@ void dun_inventory(CHA clist[3]) {
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		printf("  사용하고 싶은 아이템을 선택해주세요.\n\n  뒤로가기는 'b'를 선택해주세요.\n\n  던전 안에서는 소비형 아이템만 사용이 가능합니다.\n");
 		a = (_getch());
-		if (a == '1')
-			if (ilist[0].name != 0)
-				use_item(clist, ilist, n[0]);
+
+		if (a == '1') {
+			if (ilist[0].ea != 0)
+				use_item(clist, ilist, 0);
 			else
 				continue;
-		if (a == '2')
-			if (ilist[1].name != 0)
-				use_item(clist, ilist, n[1]);
+		}
+		if (a == '2') {
+			if (ilist[1].ea != 0)
+				use_item(clist, ilist, 1);
 			else
 				continue;
-		if (a == '3')
-			if (ilist[2].name != 0)
-				use_item(clist, ilist, n[2]);
+		}
+		if (a == '3') {
+			if (ilist[2].ea != 0)
+				use_item(clist, ilist, 2);
 			else
 				continue;
-		if (a == '4')
-			if (ilist[3].name != 0)
-				use_item(clist, ilist, n[3]);
+		}
+		if (a == '4') {
+			if (ilist[3].ea != 0)
+				use_item(clist, ilist, 3);
 			else
 				continue;
-		if (a == '5')
-			if (ilist[4].name != 0)
-				use_item(clist, ilist, n[4]);
+		}
+		if (a == '5') {
+			if (ilist[4].ea != 0)
+				use_item(clist, ilist, 4);
 			else
 				continue;
-		if (a == '6')
-			if (ilist[5].name != 0)
-				use_item(clist, ilist, n[5]);
+		}
+		if (a == '6') {
+			if (ilist[5].ea != 0)
+				use_item(clist, ilist, 5);
 			else
 				continue;
-		if (a == '7')
-			if (ilist[6].name != 0)
-				use_item(clist, ilist, n[6]);
+		}
+		if (a == '7') {
+			if (ilist[6].ea != 0)
+				use_item(clist, ilist, 6);
 			else
 				continue;
-		if (a == '8')
-			if (ilist[7].name != 0)
-				use_item(clist, ilist, n[7]);
+		}
+		if (a == '8') {
+			if (ilist[7].ea != 0)
+				use_item(clist, ilist, 7);
 			else
 				continue;
-		if (a == '9')
-			if (ilist[8].name != 0)
-				use_item(clist, ilist, n[8]);
+		}
+		if (a == '9') {
+			if (ilist[8].ea != 0)
+				use_item(clist, ilist, 8);
 			else
 				continue;
-		if (a == '0')
-			if (ilist[9].name != 0)
-				use_item(clist, ilist, n[9]);
+		}
+		if (a == '0') {
+			if (ilist[9].ea != 0)
+				use_item(clist, ilist, 9);
 			else
 				continue;
+		}
+
 		if (a == 'b')
 			break;
 	}
@@ -470,8 +484,15 @@ void dun_inf_mon(MON mlist[3]) {
 
 }
 
-void use_item(CHA clist[3], ITEM ilist[40], int inum) {
+void use_item(CHA clist[3], ITEM ilist[40], int index) {
 	while (1) {
+		int check=0;
+		for (int i = 0; i < 10; i++) {
+			if (ilist[i].index == index) {
+				check = i-1;
+				break;
+			}
+		}
 		char a;
 		system("cls");
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n\n");
@@ -495,101 +516,66 @@ void use_item(CHA clist[3], ITEM ilist[40], int inum) {
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		
 		if (clist[0].hp > 0)
-			printf("  %s의 체력 : %3d / %3d                                        ○                                     \n", clist[0].name, clist[0].hp, clist[0].fhp);
+			printf("  %s의 체력 : %3d / %3d    마나 : %3d / %3d                     ○                                     \n", clist[0].name, clist[0].hp, clist[0].fhp, clist[0].mp, clist[0].fmp);
 		if (clist[0].hp <= 0)
 			printf("                                                                 ○                                     \n");
 
 		if (clist[1].hp > 0)
-			printf("  %s의 체력 : %3d / %3d                                        ○                                     \n", clist[1].name, clist[1].hp, clist[1].fhp);
+			printf("  %s의 체력 : %3d / %3d    마나 : %3d / %3d                     ○                                     \n", clist[1].name, clist[1].hp, clist[1].fhp, clist[1].mp, clist[1].fmp);
 		if (clist[1].hp <= 0)
 			printf("                                                                 ○                                     \n");
 
 		if (clist[2].hp > 0)
-			printf("  %s의 체력 : %3d / %3d                                        ○                                     \n", clist[2].name, clist[2].hp, clist[2].fhp);
+			printf("  %s의 체력 : %3d / %3d    마나 : %3d / %3d                     ○                                     \n", clist[2].name, clist[2].hp, clist[2].fhp, clist[2].mp, clist[2].fmp);
 		if (clist[2].hp <= 0)
 			printf("                                                                 ○                                     \n");
 
 		printf("\n\n\n");
 
-		printf("  아이템 이름 : %s             hp : %d   mp : %d   남은 개수 : %d", ilist[inum].name, ilist[inum].add_hp, ilist[inum].add_mp, ilist[inum].ea);
+		printf("  아이템 이름 : %s             hp : %d   mp : %d   남은 개수 : %d", ilist[check].name, ilist[check].add_hp, ilist[check].add_mp, ilist[check].ea);
 
 		printf("\n");
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		printf("  사용할 캐릭터를 선택해주세요.\n\n  뒤로가기는 'b'를 선택해주세요.\n\n  던전 안에서는 소비형 아이템만 사용이 가능합니다.\n");
 		a = (_getch());
 		if (a == '1') {
-			if (ilist[inum].add_hp > 0 && ilist[inum].add_mp == 0) {
-				if (clist[0].hp + ilist[inum].add_hp >= clist[0].fhp)
-					clist[0].hp += clist[0].fhp;
-				else
-					clist[0].hp += ilist[inum].add_hp;
-			}
-			if (ilist[inum].add_mp > 0 && ilist[inum].add_hp == 0) {
-				if (clist[0].mp + ilist[inum].add_mp >= clist[0].fmp)
-					clist[0].mp += clist[0].fmp;
-				else
-					clist[0].mp += ilist[inum].add_mp;
-			}
-			if (ilist[inum].add_mp > 0 && ilist[inum].add_hp > 0) {
-				if (clist[0].hp + ilist[inum].add_hp >= clist[0].fhp)
-					clist[0].hp += clist[0].fhp;
-				else
-					clist[0].hp += ilist[inum].add_hp;
-				if (clist[0].mp + ilist[inum].add_mp >= clist[0].fmp)
-					clist[0].mp += clist[0].fmp;
-				else
-					clist[0].mp += ilist[inum].add_mp;
-			}
+			effect_item(clist, mlist, 0, index);
 		}
 		if (a == '2') {
-			if (ilist[inum].add_hp > 0 && ilist[inum].add_mp == 0) {
-				if (clist[1].hp + ilist[inum].add_hp >= clist[1].fhp)
-					clist[1].hp += clist[1].fhp;
-				else
-					clist[1].hp += ilist[inum].add_hp;
-			}
-			if (ilist[inum].add_mp > 0 && ilist[inum].add_hp == 0) {
-				if (clist[1].mp + ilist[inum].add_mp >= clist[1].fmp)
-					clist[1].mp += clist[1].fmp;
-				else
-					clist[1].mp += ilist[inum].add_mp;
-			}
-			if (ilist[inum].add_mp > 0 && ilist[inum].add_hp > 0) {
-				if (clist[1].hp + ilist[inum].add_hp >= clist[1].fhp)
-					clist[1].hp += clist[1].fhp;
-				else
-					clist[1].hp += ilist[inum].add_hp;
-				if (clist[1].mp + ilist[inum].add_mp >= clist[1].fmp)
-					clist[1].mp += clist[1].fmp;
-				else
-					clist[1].mp += ilist[inum].add_mp;
-			}
+			effect_item(clist, mlist, 1, index);
 		}
 		if (a == '3') {
-			if (ilist[inum].add_hp > 0 && ilist[inum].add_mp == 0) {
-				if (clist[2].hp + ilist[inum].add_hp >= clist[2].fhp)
-					clist[2].hp += clist[2].fhp;
-				else
-					clist[2].hp += ilist[inum].add_hp;
-			}
-			if (ilist[inum].add_mp > 0 && ilist[inum].add_hp == 0) {
-				if (clist[2].mp + ilist[inum].add_mp >= clist[2].fmp)
-					clist[2].mp += clist[2].fmp;
-				else
-					clist[2].mp += ilist[inum].add_mp;
-			}
-			if (ilist[inum].add_mp > 0 && ilist[inum].add_hp > 0) {
-				if (clist[2].hp + ilist[inum].add_hp >= clist[2].fhp)
-					clist[2].hp += clist[2].fhp;
-				else
-					clist[2].hp += ilist[inum].add_hp;
-				if (clist[2].mp + ilist[inum].add_mp >= clist[2].fmp)
-					clist[2].mp += clist[2].fmp;
-				else
-					clist[2].mp += ilist[inum].add_mp;
-			}
+			effect_item(clist, mlist, 2, index);
 		}
 		if (a == 'b')
 			break;
 	}
+}
+
+void effect_item(CHA clist[3], ITEM ilist[40], int cnum, int inum) {
+	if (ilist[inum].add_hp > 0 && ilist[inum].add_mp == 0) {
+		if (clist[cnum].hp + ilist[inum].add_hp >= clist[cnum].fhp)
+			clist[cnum].hp = clist[cnum].fhp;
+		else
+			clist[cnum].hp += ilist[inum].add_hp;
+	}
+	if (ilist[inum].add_hp == 0 && ilist[inum].add_mp > 0) {
+		if (clist[cnum].mp + ilist[inum].add_mp >= clist[cnum].fmp)
+			clist[cnum].mp = clist[cnum].fmp;
+		else
+			clist[cnum].mp += ilist[inum].add_mp;
+	}
+	if (ilist[inum].add_hp > 0 && ilist[inum].add_mp > 0) {
+		if (clist[cnum].hp + ilist[inum].add_hp >= clist[cnum].fhp)
+			clist[cnum].hp = clist[cnum].fhp;
+		else
+			clist[cnum].hp += ilist[inum].add_hp;
+		if (clist[cnum].mp + ilist[inum].add_mp >= clist[cnum].fmp)
+			clist[cnum].mp = clist[cnum].fmp;
+		else
+			clist[cnum].mp += ilist[inum].add_mp;
+	}
+
+	ilist[inum].ea--;
+
 }

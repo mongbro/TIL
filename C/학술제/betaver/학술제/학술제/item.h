@@ -10,7 +10,7 @@ typedef struct item {
 	int add_hp;
 	int add_mp;
 	int ea;					//해당 아이템의 개수
-	int check;				//확인할거
+	int index;
 	int num;
 }ITEM;
 
@@ -49,10 +49,16 @@ void all_0_item() {
 	strcpy(ilist[6].name, "스누피  더 진한 커피우유");
 
 	ilist[0].add_hp = 20;
+	ilist[0].add_mp = 0;
 	ilist[1].add_hp = 30;
+	ilist[1].add_mp = 30;
 	ilist[2].add_hp = 50;
+	ilist[2].add_mp = 0;
+	ilist[3].add_hp = 0;
 	ilist[3].add_mp = 20;
+	ilist[4].add_hp = 0;
 	ilist[4].add_mp = 30;
+	ilist[5].add_hp = 0;
 	ilist[5].add_mp = 50;
 	ilist[6].add_hp = 50;
 	ilist[6].add_mp = 50;
@@ -78,6 +84,7 @@ void all_1_item() {
 	strcpy(ilist[10].name, "초보 조장의 계획서");
 
 	ilist[10].add_readership = 5;
+	ilist[10].num = 10;
 	ilist[10].ea = 0;
 	
 }
@@ -86,6 +93,7 @@ void all_2_item() {
 	strcpy(ilist[20].name, "초보 서기의 연습장");
 
 	ilist[20].add_noteship = 5;
+	ilist[20].num = 20;
 	ilist[20].ea = 0;
 
 }
@@ -94,6 +102,7 @@ void all_3_item() {
 	strcpy(ilist[30].name, "가난한 지갑의 용돈");
 
 	ilist[30].add_wealth = 5;
+	ilist[30].num = 30;
 	ilist[30].ea = 0;
 
 }
@@ -109,11 +118,6 @@ void prologue_ditem(ITEM dilist[10]) {
 	dilist[2].ea = 1;
 	dilist[3].ea = 1;
 	dilist[4].ea = 1;
-	dilist[0].check = 1;
-	dilist[1].check = 1;
-	dilist[2].check = 1;
-	dilist[3].check = 1;
-	dilist[4].check = 1;
 	dilist[0].num = ilist[10].num;
 	dilist[1].num = ilist[20].num;
 	dilist[2].num = ilist[30].num;
