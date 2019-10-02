@@ -31,8 +31,16 @@ void print_line() {
 }
 
 void town() {
-	printf("\n");
+	char a;
+	while (1) {
+		system("cls");
+		printf("\n      마을");
+	
 
+
+		a = (_getch());
+		
+	}
 }
 
 void print_map(CHA clist[3], MON mlist[3]) {
@@ -778,10 +786,28 @@ void prologue() {
 		printf("  %s이(가) %d의 데미지를 입음!!!                               = %s이(가) %d의 데미지를 입었습니다.\n", mlist[1].name, hit_damage, mlist[1].name, hit_damage);
 		kill_monster(clist, mlist, stlist, 2, 0);
 		printf("\n\n");
-		printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
-		print_line();
-		if (_getch())
-			break;
+
+		if (check_exter(clist, mlist) == 1) {
+			printf("  캐릭터가 모두 밤샘에 지켜 쓰러졌습니다!!!!\n  해당 과제에서 최하 점수를 맞았습니다...\n\n");
+			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+			print_line();
+			if (_getch())
+				break;
+		}
+		if (check_exter(clist, mlist) == 2) {
+			printf("모든 과제를 성공적으로 완수했습니다!!!\n  하지만 성적은 교수님만이 알고계십니다.");
+			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+			print_line();
+			if (_getch())
+				break;
+		}
+		if (check_exter(clist, mlist) == 0) {
+			printf("\n\n  계속 하시려면 아무키나 누르세요.\n");
+			print_line();
+			if (_getch())
+				break;
+		}
+
 	}
 }
 

@@ -96,7 +96,7 @@ int check_exter(CHA clist[3], MON mlist[3]) {
 	}
 	if (die_character == 3)
 		return 1;
-	else if (die_character == 3)
+	else if (die_monster == 3)
 		return 2;
 	else
 		return 0;
