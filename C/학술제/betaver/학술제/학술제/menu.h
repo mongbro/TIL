@@ -8,6 +8,7 @@
 #include"item.h"
 #include"map.h"
 #include"monster.h"
+#include"map.h"
 
 void dun_menu(CHA clist[3], MON mlist[3]);
 void town_menu(CHA clist[3]);
@@ -24,6 +25,7 @@ void dun_inf_cha(CHA clist[3]);
 void dun_inf_mon(MON mlist[3]);
 void use_item(CHA clist[3], ITEM ilist[40], int inum);
 void effect_item(CHA clist[3], ITEM ilist[41], int cnum, int inum);
+void prologue_dun_inventory(CHA clist[3]);
 
 void dun_menu(CHA clist[3], MON mlist[3]) {
 	while (1) {
@@ -394,6 +396,7 @@ void dun_inventory(CHA clist[3]) {
 		int n[10];
 		for (int i = 0; i < 10; i++) {
 			n[i] = 40;
+			ilist[i].index = 0;
 		}
 		int index = 1;
 		system("cls");
@@ -405,10 +408,6 @@ void dun_inventory(CHA clist[3]) {
 				ilist[i].index = index;
 				index++;
 			}
-			else {
-				n[index - 1] = 40;
-				ilist[i].ea = 0;
-			}
 		}
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		printf("  사용하고 싶은 아이템을 선택해주세요.\n\n  뒤로가기는 'b'를 선택해주세요.\n\n  던전 안에서는 소비형 아이템만 사용이 가능합니다.\n");
@@ -416,61 +415,61 @@ void dun_inventory(CHA clist[3]) {
 
 		if (a == '1') {
 			if (ilist[n[0]].ea != 0)
-				use_item(clist, ilist, 1);
+				use_item(clist, ilist, ilist[n[0]].index);
 			else
 				continue;
 		}
 		if (a == '2') {
 			if (ilist[n[1]].ea != 0)
-				use_item(clist, ilist, 2);
+				use_item(clist, ilist, ilist[n[1]].index);
 			else
 				continue;
 		}
 		if (a == '3') {
 			if (ilist[n[2]].ea != 0)
-				use_item(clist, ilist, 3);
+				use_item(clist, ilist, ilist[n[2]].index);
 			else
 				continue;
 		}
 		if (a == '4') {
 			if (ilist[n[3]].ea != 0)
-				use_item(clist, ilist, 4);
+				use_item(clist, ilist, ilist[n[3]].index);
 			else
 				continue;
 		}
 		if (a == '5') {
 			if (ilist[n[4]].ea != 0)
-				use_item(clist, ilist, 5);
+				use_item(clist, ilist, ilist[n[4]].index);
 			else
 				continue;
 		}
 		if (a == '6') {
 			if (ilist[n[5]].ea != 0)
-				use_item(clist, ilist, 6);
+				use_item(clist, ilist, ilist[n[5]].index);
 			else
 				continue;
 		}
 		if (a == '7') {
 			if (ilist[n[6]].ea != 0)
-				use_item(clist, ilist, 7);
+				use_item(clist, ilist, ilist[n[6]].index);
 			else
 				continue;
 		}
 		if (a == '8') {
 			if (ilist[n[7]].ea != 0)
-				use_item(clist, ilist, 8);
+				use_item(clist, ilist, ilist[n[7]].index);
 			else
 				continue;
 		}
 		if (a == '9') {
 			if (ilist[n[8]].ea != 0)
-				use_item(clist, ilist, 9);
+				use_item(clist, ilist, ilist[n[8]].index);
 			else
 				continue;
 		}
 		if (a == '0') {
 			if (ilist[n[9]].ea != 0)
-				use_item(clist, ilist, 0);
+				use_item(clist, ilist, ilist[n[9]].index);
 			else
 				continue;
 		}
@@ -584,4 +583,93 @@ void effect_item(CHA clist[3], ITEM ilist[41], int cnum, int inum) {
 	}
 
 
+}
+
+
+void prologue_dun_inventory(CHA clist[3]) {
+	while (1) {
+		char a;
+		int n[10];
+		for (int i = 0; i < 10; i++) {
+			n[i] = 40;
+			ilist[i].index = 0;
+		}
+		int index = 1;
+		system("cls");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n\n");
+		for (int i = 0; i < 10; i++) {
+			if (ilist[i].ea > 0) {
+				printf("  %d. %10s                   hp 회복 : %2d    mp 회복 : %2d    남은 개수 : %2d\n\n", index, ilist[i].name, ilist[i].add_hp, ilist[i].add_mp, ilist[i].ea);
+				n[index - 1] = i;
+				ilist[i].index = index;
+				index++;
+			}
+		}
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		printf("  사용하고 싶은 아이템을 선택해주세요.\n\n  뒤로가기는 'b'를 선택해주세요.\n\n  던전 안에서는 소비형 아이템만 사용이 가능합니다.\n");
+		a = (_getch());
+
+		if (a == '1') {
+			if (ilist[n[0]].ea != 0)
+				use_item(clist, ilist, ilist[n[0]].index);
+			else
+				continue;
+		}
+		if (a == '2') {
+			if (ilist[n[1]].ea != 0)
+				use_item(clist, ilist, ilist[n[1]].index);
+			else
+				continue;
+		}
+		if (a == '3') {
+			if (ilist[n[2]].ea != 0)
+				use_item(clist, ilist, ilist[n[2]].index);
+			else
+				continue;
+		}
+		if (a == '4') {
+			if (ilist[n[3]].ea != 0)
+				use_item(clist, ilist, ilist[n[3]].index);
+			else
+				continue;
+		}
+		if (a == '5') {
+			if (ilist[n[4]].ea != 0)
+				use_item(clist, ilist, ilist[n[4]].index);
+			else
+				continue;
+		}
+		if (a == '6') {
+			if (ilist[n[5]].ea != 0)
+				use_item(clist, ilist, ilist[n[5]].index);
+			else
+				continue;
+		}
+		if (a == '7') {
+			if (ilist[n[6]].ea != 0)
+				use_item(clist, ilist, ilist[n[6]].index);
+			else
+				continue;
+		}
+		if (a == '8') {
+			if (ilist[n[7]].ea != 0)
+				use_item(clist, ilist, ilist[n[7]].index);
+			else
+				continue;
+		}
+		if (a == '9') {
+			if (ilist[n[8]].ea != 0)
+				use_item(clist, ilist, ilist[n[8]].index);
+			else
+				continue;
+		}
+		if (a == '0') {
+			if (ilist[n[9]].ea != 0)
+				use_item(clist, ilist, ilist[n[9]].index);
+			else
+				continue;
+		}
+		if (a == 'b')
+			break;
+	}
 }

@@ -139,7 +139,7 @@ void kill_character(CHA clist[3], MON mlist[3], STAGE stlist[6], int mnum) {
 void prologue_kill_monster(CHA clist[3], MON mlist[3], STAGE stlist[6], int cnum, int stnum) {
 	srand((unsigned)time(NULL));
 	int add_gold = rand() % 10 + 1;
-	int chance_drop = 0;		//100%확률로 드랍 => 0일때 드랍
+	int chance_drop = 1;		//100%확률로 드랍 => 0일때 드랍
 	int item_num;
 	for (int i = 0; i < 3; i++) {
 		if (mlist[i].hp <= 0 && mlist[i].condition == 0) {

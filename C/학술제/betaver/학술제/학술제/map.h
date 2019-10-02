@@ -18,8 +18,7 @@ void print_map(CHA clist[3], MON mlist[3]);
 void print_hp(CHA clist[3], MON mlist[3]);
 void print_choice_mon(CHA clist[3], MON mlist[3]);
 void dungeon(CHA clist[3], MON mlist[3]);
-void prologue0();
-void prologue2(CHA clist[3], MON mlist[3]);
+void prologue();
 void c_choice(CHA clist[3], MON mlist[3], int cnum);
 void c_attack(CHA clist[3], MON mlist[3], int cnum);
 void cs_attack(CHA clist[3], MON mlist[3], int cnum, int snum);
@@ -172,7 +171,7 @@ void event_hit() {
 
 ////////////////////////////////////////////////////////////   여기부터 프롤로그   ////////////////////////////////////////////////////////////
 
-void prologue0() {
+void prologue() {
 	while (1) {
 		system("cls");
 		print_line();
@@ -756,6 +755,7 @@ void prologue0() {
 		print_choice_mon(clist, mlist);
 		printf("\n\n  계속 하시려면 '2'를 누르세요.\n");
 		print_line();
+		damage_character_to_monster(clist, mlist, 2, 1, 0);
 		a = _getch();
 		if (a == '2')
 			break;
@@ -768,7 +768,6 @@ void prologue0() {
 	while (1) {															//////////////// 프롤로그 c2 공격 효과
 		system("cls");
 		print_line();
-		damage_character_to_monster(clist, mlist, 2, 1, 0);
 		print_map(clist, mlist);
 		print_line();
 		printf("\n");
@@ -784,15 +783,9 @@ void prologue0() {
 		if (_getch())
 			break;
 	}
-
-
 }
 
 ////////////////////////////////////////////////////////////   여기까지 프롤로그   ////////////////////////////////////////////////////////////
-
-void prologue2(CHA clist[3], MON mlist[3]) {
-
-}
 
 void c_choice(CHA clist[3], MON mlist[3], int cnum) {
 	while (1) {

@@ -113,8 +113,8 @@ void prologue_ditem(ITEM dilist[10]) {
 	strcpy(dilist[3].name, ilist[0].name);
 	strcpy(dilist[4].name, ilist[3].name);
 
-	ilist[0].ea = 1;
-	ilist[3].ea = 1;
+	ilist[2].ea = 1;
+	ilist[5].ea = 1;
 	dilist[0].ea = 1;
 	dilist[1].ea = 1;
 	dilist[2].ea = 1;
