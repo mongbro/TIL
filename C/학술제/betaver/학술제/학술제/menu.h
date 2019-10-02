@@ -23,7 +23,7 @@ void dun_inventory(CHA clist[3]);
 void dun_inf_cha(CHA clist[3]);
 void dun_inf_mon(MON mlist[3]);
 void use_item(CHA clist[3], ITEM ilist[40], int inum);
-void effect_item(CHA clist[3], ITEM ilist[40], int cnum, int inum);
+void effect_item(CHA clist[3], ITEM ilist[41], int cnum, int inum);
 
 void dun_menu(CHA clist[3], MON mlist[3]) {
 	while (1) {
@@ -391,80 +391,86 @@ void town_inf_cha(CHA clist[3]) {
 void dun_inventory(CHA clist[3]) {
 	while (1) {
 		char a;
-		int n[10] = { 0 };
+		int n[10];
+		for (int i = 0; i < 10; i++) {
+			n[i] = 40;
+		}
 		int index = 1;
 		system("cls");
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n\n");
 		for (int i = 0; i < 10; i++) {
-				if (ilist[i].ea > 0) {
-					printf("  %d. %s                   hp 회복 : %d    mp 회복 : %d    남은 개수 : %d\n\n", index, ilist[i].name, ilist[i].add_hp, ilist[i].add_mp, ilist[i].ea);
-					n[i] = i;
-					ilist[i].index = index;
-					index++;
-				}
-			
+			if (ilist[i].ea > 0) {
+				printf("  %d. %10s                   hp 회복 : %2d    mp 회복 : %2d    남은 개수 : %2d\n\n", index, ilist[i].name, ilist[i].add_hp, ilist[i].add_mp, ilist[i].ea);
+				n[index - 1] = i;
+				ilist[i].index = index;
+				index++;
+			}
+			else {
+				n[index - 1] = 40;
+				ilist[i].ea = 0;
+			}
 		}
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		printf("  사용하고 싶은 아이템을 선택해주세요.\n\n  뒤로가기는 'b'를 선택해주세요.\n\n  던전 안에서는 소비형 아이템만 사용이 가능합니다.\n");
 		a = (_getch());
 
 		if (a == '1') {
-			if (ilist[0].ea != 0)
-				use_item(clist, ilist, 0);
-			else
-				continue;
-		}
-		if (a == '2') {
-			if (ilist[1].ea != 0)
+			if (ilist[n[0]].ea != 0)
 				use_item(clist, ilist, 1);
 			else
 				continue;
 		}
-		if (a == '3') {
-			if (ilist[2].ea != 0)
+		if (a == '2') {
+			if (ilist[n[1]].ea != 0)
 				use_item(clist, ilist, 2);
 			else
 				continue;
 		}
-		if (a == '4') {
-			if (ilist[3].ea != 0)
+		if (a == '3') {
+			if (ilist[n[2]].ea != 0)
 				use_item(clist, ilist, 3);
 			else
 				continue;
 		}
-		if (a == '5') {
-			if (ilist[4].ea != 0)
+		if (a == '4') {
+			if (ilist[n[3]].ea != 0)
 				use_item(clist, ilist, 4);
 			else
 				continue;
 		}
-		if (a == '6') {
-			if (ilist[5].ea != 0)
+		if (a == '5') {
+			if (ilist[n[4]].ea != 0)
 				use_item(clist, ilist, 5);
 			else
 				continue;
 		}
-		if (a == '7') {
-			if (ilist[6].ea != 0)
+		if (a == '6') {
+			if (ilist[n[5]].ea != 0)
 				use_item(clist, ilist, 6);
 			else
 				continue;
 		}
-		if (a == '8') {
-			if (ilist[7].ea != 0)
+		if (a == '7') {
+			if (ilist[n[6]].ea != 0)
 				use_item(clist, ilist, 7);
 			else
 				continue;
 		}
-		if (a == '9') {
-			if (ilist[8].ea != 0)
+		if (a == '8') {
+			if (ilist[n[7]].ea != 0)
 				use_item(clist, ilist, 8);
 			else
 				continue;
 		}
-		if (a == '0') {
-			if (ilist[9].ea != 0)
+		if (a == '9') {
+			if (ilist[n[8]].ea != 0)
 				use_item(clist, ilist, 9);
+			else
+				continue;
+		}
+		if (a == '0') {
+			if (ilist[n[9]].ea != 0)
+				use_item(clist, ilist, 0);
 			else
 				continue;
 		}
@@ -486,17 +492,16 @@ void dun_inf_mon(MON mlist[3]) {
 
 void use_item(CHA clist[3], ITEM ilist[40], int index) {
 	while (1) {
-		int check=0;
+		int check=100;
 		for (int i = 0; i < 10; i++) {
 			if (ilist[i].index == index) {
-				check = i-1;
+				check = i;
 				break;
 			}
 		}
 		char a;
 		system("cls");
-		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n\n");
-		printf("\n");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n");
 		if (clist[0].hp > 0)
 			printf("  %s                                                           ○                                                        \n", clist[0].name);
 		if (clist[0].hp <= 0)
@@ -511,61 +516,62 @@ void use_item(CHA clist[3], ITEM ilist[40], int index) {
 			printf("  %s                                                           ○                                                        \n", clist[2].name);
 		if (clist[2].hp <= 0)
 			printf("                                                                   ○                                                        \n");
-		
 		printf("\n");
-		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n");
 		
 		if (clist[0].hp > 0)
-			printf("  %s의 체력 : %3d / %3d    마나 : %3d / %3d                     ○                                     \n", clist[0].name, clist[0].hp, clist[0].fhp, clist[0].mp, clist[0].fmp);
+			printf("  1. %s의 체력 : %3d / %3d    마나 : %3d / %3d                 ○                                     \n", clist[0].name, clist[0].hp, clist[0].fhp, clist[0].mp, clist[0].fmp);
 		if (clist[0].hp <= 0)
 			printf("                                                                 ○                                     \n");
 
 		if (clist[1].hp > 0)
-			printf("  %s의 체력 : %3d / %3d    마나 : %3d / %3d                     ○                                     \n", clist[1].name, clist[1].hp, clist[1].fhp, clist[1].mp, clist[1].fmp);
+			printf("  2. %s의 체력 : %3d / %3d    마나 : %3d / %3d                 ○                                     \n", clist[1].name, clist[1].hp, clist[1].fhp, clist[1].mp, clist[1].fmp);
 		if (clist[1].hp <= 0)
 			printf("                                                                 ○                                     \n");
 
 		if (clist[2].hp > 0)
-			printf("  %s의 체력 : %3d / %3d    마나 : %3d / %3d                     ○                                     \n", clist[2].name, clist[2].hp, clist[2].fhp, clist[2].mp, clist[2].fmp);
+			printf("  3. %s의 체력 : %3d / %3d    마나 : %3d / %3d                 ○                                     \n", clist[2].name, clist[2].hp, clist[2].fhp, clist[2].mp, clist[2].fmp);
 		if (clist[2].hp <= 0)
 			printf("                                                                 ○                                     \n");
 
 		printf("\n\n\n");
 
-		printf("  아이템 이름 : %s             hp : %d   mp : %d   남은 개수 : %d", ilist[check].name, ilist[check].add_hp, ilist[check].add_mp, ilist[check].ea);
+		printf("  아이템 이름 : %10s             hp : %2d   mp : %2d   남은 개수 : %2d", ilist[check].name, ilist[check].add_hp, ilist[check].add_mp, ilist[check].ea);
 
 		printf("\n");
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		printf("  사용할 캐릭터를 선택해주세요.\n\n  뒤로가기는 'b'를 선택해주세요.\n\n  던전 안에서는 소비형 아이템만 사용이 가능합니다.\n");
 		a = (_getch());
 		if (a == '1') {
-			effect_item(clist, mlist, 0, index);
+			effect_item(clist, ilist, 0, check);
 		}
 		if (a == '2') {
-			effect_item(clist, mlist, 1, index);
+			effect_item(clist, ilist, 1, check);
 		}
 		if (a == '3') {
-			effect_item(clist, mlist, 2, index);
+			effect_item(clist, ilist, 2, check);
 		}
 		if (a == 'b')
 			break;
 	}
 }
 
-void effect_item(CHA clist[3], ITEM ilist[40], int cnum, int inum) {
-	if (ilist[inum].add_hp > 0 && ilist[inum].add_mp == 0) {
+void effect_item(CHA clist[3], ITEM ilist[41], int cnum, int inum) {
+	if (ilist[inum].add_hp > 0 && ilist[inum].add_mp == 0 && ilist[inum].ea > 0) {
 		if (clist[cnum].hp + ilist[inum].add_hp >= clist[cnum].fhp)
 			clist[cnum].hp = clist[cnum].fhp;
 		else
 			clist[cnum].hp += ilist[inum].add_hp;
+		ilist[inum].ea--;
 	}
-	if (ilist[inum].add_hp == 0 && ilist[inum].add_mp > 0) {
+	if (ilist[inum].add_hp == 0 && ilist[inum].add_mp > 0 && ilist[inum].ea > 0) {
 		if (clist[cnum].mp + ilist[inum].add_mp >= clist[cnum].fmp)
 			clist[cnum].mp = clist[cnum].fmp;
 		else
 			clist[cnum].mp += ilist[inum].add_mp;
+		ilist[inum].ea--;
 	}
-	if (ilist[inum].add_hp > 0 && ilist[inum].add_mp > 0) {
+	if (ilist[inum].add_hp > 0 && ilist[inum].add_mp > 0 && ilist[inum].ea > 0) {
 		if (clist[cnum].hp + ilist[inum].add_hp >= clist[cnum].fhp)
 			clist[cnum].hp = clist[cnum].fhp;
 		else
@@ -574,8 +580,8 @@ void effect_item(CHA clist[3], ITEM ilist[40], int cnum, int inum) {
 			clist[cnum].mp = clist[cnum].fmp;
 		else
 			clist[cnum].mp += ilist[inum].add_mp;
+		ilist[inum].ea--;
 	}
 
-	ilist[inum].ea--;
 
 }

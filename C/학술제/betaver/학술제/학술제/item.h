@@ -15,8 +15,8 @@ typedef struct item {
 }ITEM;
 
 int gold = 0;
-ITEM ilist[40] = { 0 };				//인벤토리에 있는 아이템
-ITEM aitem[40] = { 0 };				//모든 종류의 아이템
+ITEM ilist[41] = { 0 };				//인벤토리에 있는 아이템
+ITEM aitem[41] = { 0 };				//모든 종류의 아이템
 ITEM dilist[10] = { 0 };			//드랍되는 아이템
 ITEM emptylist[10] = { 0 };
 
@@ -113,6 +113,8 @@ void prologue_ditem(ITEM dilist[10]) {
 	strcpy(dilist[3].name, ilist[0].name);
 	strcpy(dilist[4].name, ilist[3].name);
 
+	ilist[0].ea = 1;
+	ilist[3].ea = 1;
 	dilist[0].ea = 1;
 	dilist[1].ea = 1;
 	dilist[2].ea = 1;
