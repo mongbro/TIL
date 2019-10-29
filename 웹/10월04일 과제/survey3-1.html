@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>설문조사</title>
+</head>
+<body>
+    <h1>설문지</h1>
+    <p>소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.</p>
+    <hr>
+    학년 <input type="radio" name="grade" value="1st" checked>1학년
+    <input type="radio" name="grade" value="2nd">2학년
+    <input type="radio" name="grade" value="3rd">3학년
+    <input type="radio" name="grade" value="4th">4학년
+    <br>
+    <br>
+    성별 <input type="radio" name="sex" value="male">남
+    <input type="radio" name="sex" value="female">여
+    <br>
+    <br>
+    <form>
+        <label> 관심분야
+            <select name="major" required>
+                <option value="모바일 소프트웨어" selected>모바일 소프트웨어</option>
+                <option value="컴퓨터 소프트웨어">컴퓨터 소프트웨어</option>
+                <option value="모바일 하드웨어">모바일 하드웨어</option>
+                <option value="컴퓨터 하드웨어">컴퓨터 하드웨어</option>
+            </select>
+        </label>
+    </form>
+    <br>
+    진로 <input type="checkbox" name="개발" checked>개발
+    <input type="checkbox" name="기획">기획
+    <input type="checkbox" name="영업">영업
+    <input type="checkbox" name="창업">창업
+    <br>
+    <br>
+    <form>
+        <label>남기고 싶은 말
+            <textarea name="입력란" cols="50" rows="10" placeholder="글을 남겨주세요"></textarea> 
+</label>
+</form>
+<br>
+    <footer>
+        Copyright 2017 by Kildong
+    </footer>
+</body>
+</html>

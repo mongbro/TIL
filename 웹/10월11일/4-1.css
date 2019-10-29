@@ -1,0 +1,54 @@
+body{
+    margin: 0px;
+    background-color: aliceblue;
+}
+h1{
+    margin: 0px;
+    text-align: center;
+}
+p{
+    padding-left: 10px;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    text-indent: 1em;
+}
+a{
+    text-decoration: none;
+}
+d{
+    color: blue;
+    font-size: 15px;
+}
+nav{
+    float: left;
+    background-color: orange;
+    left: 0px;
+    width: 200px;
+    height: 45em;
+}
+header{
+    position: relative;
+    width: 1350px;
+    height: 9em;
+    background-color: yellow;
+    padding-bottom: 30px;
+}
+section{
+    width: 1350px;
+    left: 150px;
+    width: 1350px;
+    background-color: skyblue;
+    height: 45em;
+}
+footer{
+    background-color: pink;
+    position: relative;
+}
+h2{
+    padding-left: 10px;
+    margin: 0px;
+}
+ul{
+    padding-left: 50px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <legend style="font-size:30px;">개인 정보 입력</legend>
+        <p>아 이 디 : <input type="text" name="id"><input type="submit" name="check" value="ID중복검사"></p>
+        <p>생년월일 : <input type="date" name="barth"></p>
+        <p>성별 : <input type="radio" name="sex" value="male">남성<input type="radio" name="sex" value="female">여성</p>
+        <p>E-mail : <input type="text" name="email"></p>
+        <p>메일수신 : <input type="radio" name="agree" value="agree">수신동의<input type="radio" name="disagree" value="agree">수신거부</p>
+        <p>핸드폰  :
+        <select name="phone">
+            <option value="1" selected>010</option>
+            <option value="2">011</option>
+            <option value="2">017</option>
+            <option value="2">019</option>
+        </p>
+        </select>
+        -<input type="text">-<input type="text">
+        <p>직업
+        <select name="jab">
+            <option value="1" selected>학생</option>
+            <option value="2">공무원</option>
+            <option value="3">회사원</option>
+            <option value="4">주부</option>
+            <option value="5">자영업</option>
+        </select>
+    </p>
+        <p>취미 : <input type="checkbox" name="habit">쇼핑<input type="checkbox" name="habit">인터넷<input type="checkbox" name="habit">음악감상
+            <input type="checkbox" name="habit">독서<input type="checkbox" name="habit">스포츠
+        </p>
+        <p>자기 소개 : 
+        <textarea cols="30" rows="3"></textarea>
+    </p>
+    </form>
+</body>
+</html>

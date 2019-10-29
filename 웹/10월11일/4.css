@@ -1,0 +1,33 @@
+body{
+    background-color: aliceblue;
+}
+h1{
+    color: brown;
+    text-align: center;
+}
+p{
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    text-indent: 1em;
+}
+ul{
+    border-style: dotted;
+    border-width: thin;
+}
+h2{
+    color: blue;
+    text-shadow: 10px 10px 1px skyblue;
+}
+footer{
+    background-color: orange;
+
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+}
+d{
+    color: blue;
+    font-size: 15px;
+}

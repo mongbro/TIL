@@ -1,0 +1,17 @@
+body{
+    margin: 0px;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+header{
+    background-color: yellow;
+}
+section{
+    margin: 10px 0px 10px 5px;
+    background-color: rgb(255, 224, 229);
+}
+footer{
+    background-color: rgb(172, 94, 172);
+}
