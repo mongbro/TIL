@@ -9,5 +9,7 @@ void deservation(int seats[][10]);
 void reservation_c(int seats[][10]);
 void deservation_c(int seats[][10]);
 void print_seat(int seats[][10]);
+void login(char id[15], char pw[20]);
+void logout();
 
 #endif
