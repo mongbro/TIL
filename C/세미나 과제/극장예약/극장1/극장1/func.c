@@ -18,7 +18,8 @@ int menu() {
 		printf("3. 좌석보기\n\n");
 		printf("4. 로그인\n\n");
 		printf("5. 로그아웃\n\n");
-		printf("6. 종료\n\n");
+		printf("6. 회원가입\n\n");
+		printf("7. 종료\n\n");
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		a = _getch();
 		if (a == '1') {
@@ -54,6 +55,8 @@ int menu() {
 		}
 		if (a == '6')
 			return 6;
+		if (a == '7')
+			return 7;
 		else
 			continue;
 	}
@@ -167,69 +170,5 @@ void print_seat(int seats[][10]) {
 		printf("좌석보기를 끝내시려면 아무키나 누르세요.\n");
 		if (getch())
 			break;
-	}
-}
-
-void login(char id[15], char pw[20]) {
-	char user_id[15] = { 0 }, user_pw[20] = { 0 };
-	int count = 0;
-	int flag;
-	extern int log;
-	while (1) {
-		flag = 0;
-		system("cls");
-		printf("\n    ID : ");
-		scanf("%s", user_id);
-		printf("\n    PW : ");
-		scanf("%s", user_pw);
-		if (strcmp(user_id, id) == 0 && strcmp(user_pw, pw) == 0) {
-			log = 1;
-			break;
-		}
-		else {
-			for (int i = 0; i < strlen(user_id); i++) {
-				if (isalnum(*(user_id + i)) == 0) {
-					printf("아이디는 알파벳과 숫자의 조합입니다.\n");
-					count++;
-					flag = 1;
-					printf("로그인 실패 %d회\n", count);
-					if (count == 5) {
-						printf("5회이상 로그인에 실패하셨습니다.\n");
-						exit(1);
-					}
-					printf("아무키나 누르세요.\n");
-					if (getch())
-						break;
-				}
-			}
-			if (flag == 0) {
-				count++;
-				printf("로그인 실패 %d회\n", count);
-				if (count == 5) {
-					printf("5회이상 로그인에 실패하셨습니다.\n");
-					exit(1);
-				}
-				printf("아무키나 누르세요.\n");
-				if (getch())
-					continue;
-			}
-		}
-	}
-}
-
-void logout() {
-	extern int log;
-	char answer;
-	while (1) {
-		system("cls");
-		printf("\n    로그아웃 하시겠습니까? (Y or N)\n");
-		answer = getch();
-		if (answer == 'y' || answer == 'Y') {
-			log = 0;
-			break;
-		}
-		if (answer == 'n' || answer == 'N') {
-			break;
-		}
 	}
 }

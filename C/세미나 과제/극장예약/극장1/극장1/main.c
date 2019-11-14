@@ -1,19 +1,22 @@
 #include<stdio.h>
 #include<windows.h>
 #include"func.h"
+#include"membership.h"
 
 int log = 0;
 
 int main() {
 	int me;
 	int seats[10][10] = { 0 };
-	char id[15] = "whd4607";
-	char pw[20] = "rlawhddms1234";
+	MEMBER mem[10] = { 0 };
+	for (int i = 0; i < 10; i++) {
+		mem[i].flag = 0;
+	}
 
 	while (1) {
 		system("cls");
 		me = menu();
-		if (me == 6)
+		if (me == 7)
 			return 0;
 		if (me == 1)
 			reservation(seats);
@@ -22,8 +25,10 @@ int main() {
 		if (me == 3)
 			print_seat(seats);
 		if (me == 4)
-			login(id, pw);
+			login(mem);
 		if (me == 5)
-			logout(id, pw);
+			logout(mem);
+		if (me == 6)
+			sign_up1(mem);
 	}
 }
