@@ -4,6 +4,7 @@
 #include"membership.h"
 
 int log = 0;
+int lognum;
 
 int main() {
 	int me;
@@ -11,6 +12,11 @@ int main() {
 	MEMBER mem[10] = { 0 };
 	for (int i = 0; i < 10; i++) {
 		mem[i].flag = 0;
+		for (int j = 0; i < 10; i++) {
+			for (int k = 0; k < 10; k++) {
+				mem[i].s[j][k] = 0;
+			}
+		}
 	}
 
 	while (1) {

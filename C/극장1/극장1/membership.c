@@ -10,6 +10,7 @@ void login(MEMBER mem[10]) {
 	int flag;
 	int fail;
 	extern int log;
+	extern int lognum;
 	extern void menu();
 	while (1) {
 		fail = 0;
@@ -118,6 +119,7 @@ void sign_up2(MEMBER mem[10]) {
 	for (int i = 0; i < 10; i++) {
 		if (mem[i].flag == 0) {
 			num = i;
+			mem[i].memnum = num;
 			break;
 		}
 	}

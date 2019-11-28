@@ -82,8 +82,9 @@ void reservation(int seats[][10]) {
 	char op;
 	while (1) {
 		system("cls");
-		seat(seats);
 		reservation_c(seats);
+		system("cls");
+		seat(seats);
 		printf("예약을 끝내시겠습니까? Y or N\n");
 		op = _getch();
 		if (op == 'y' || op == 'Y')
@@ -98,8 +99,9 @@ void deservation(int seats[][10]) {
 	char op;
 	while (1) {
 		system("cls");
-		seat(seats);
 		deservation_c(seats);
+		system("cls");
+		seat(seats);
 		printf("예약 취소를 끝내시겠습니까? Y or N\n");
 		op = _getch();
 		if (op == 'y' || op == 'Y')
@@ -110,17 +112,47 @@ void deservation(int seats[][10]) {
 }
 
 void reservation_c(int seats[][10]) {
-	int row, col, num;
+	int row, col;
+	char c1, c2;
 
 	while (1) {
-		printf("몇 행 몇 열에 예약하시겠습니까?(ex. 1 1      3 5)(뒤로가기는 -1 -1) : ");
-		scanf("\n%d%d", &row, &col);
-		if (row==-1) {
+		system("cls");
+		seat(seats);
+		printf("예약할 행을 선택해주세요.(뒤로가기는 b) : ");
+		c1 = _getch();
+		if (c1 == 'b') {
+			printf("\n");
 			break;
 		}
-		if (row > 10 || col>10) {
+		row = c1 - 48;
+		printf("\n");
+		if (row > 10) {
 			printf("1~10 사이에서 선택해주세요.\n");
-			continue;
+			if(getch())
+				continue;
+		}
+		system("cls");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		printf("    | 1. | 2. | 3. | 4. | 5. | 6. | 7. | 8. | 9. | 10.\n");
+		printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+		printf("%d. ", row);
+		for (int j = 0; j < 10; j++) {
+			printf(" |  %d", seats[row-1][j]);
+		}
+		printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		printf("예약할 열을 선택해주세요.(뒤로가기는 b) : ");
+		c2 = _getch();
+		if (c2 == 'b') {
+			printf("\n");
+			break;
+		}
+		col = c2 - 48;
+		printf("\n");
+		if (col > 10) {
+			printf("1~10 사이에서 선택해주세요.\n");
+			if (getch())
+				continue;
 		}
 		else {
 			if (seats[row - 1][col - 1] == 0) {
@@ -129,7 +161,8 @@ void reservation_c(int seats[][10]) {
 			}
 			if (seats[row - 1][col - 1] == 1) {
 				printf("이미 예약이 되어있는 자리입니다. 다른 자리를 선택해주세요.\n");
-				continue;
+				if (getch())
+					continue;
 			}
 			else
 				continue;
@@ -139,27 +172,58 @@ void reservation_c(int seats[][10]) {
 
 void deservation_c(int seats[][10]) {
 	int row, col;
+	char c1, c2;
 
 	while (1) {
-		printf("몇 행 몇 열을 취소하시겠습니까?(ex. 1 1      3 5)(뒤로가기는 -1 -1) : ");
-		scanf("\n%d%d", &row, &col);
-		if (row == -1) {
+		system("cls");
+		seat(seats);
+		printf("취소할 행을 선택해주세요.(뒤로가기는 -1) : ");
+		c1 = _getch();
+		if (c1 == 'b') {
+			printf("\n");
 			break;
 		}
-		if (row > 10 || col > 10) {
+		row = c1 - 48;
+		if (row > 10) {
 			printf("1~10 사이에서 선택해주세요.\n");
 			continue;
 		}
-		if (seats[row - 1][col - 1] == 1) {
-			seats[row - 1][col - 1] = 0;
+		system("cls");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		printf("    | 1. | 2. | 3. | 4. | 5. | 6. | 7. | 8. | 9. | 10.\n");
+		printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+		printf("%d. ", row);
+		for (int j = 0; j < 10; j++) {
+			printf(" |  %d", seats[row - 1][j]);
+		}
+		printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		printf("취소할 열을 선택해주세요.(뒤로가기는 -1) : ");
+		c2 = _getch();
+		if (c2 == 'b') {
+			printf("\n");
 			break;
 		}
-		if (seats[row - 1][col - 1] == 0) {
-			printf("예약되어있지 않은 자리입니다. 다른 자리를 선택해주세요.\n");
-			continue;
+		col = c2 - 48;
+		printf("\n");
+		if (col > 10) {
+			printf("1~10 사이에서 선택해주세요.\n");
+			if(getch())
+				continue;
 		}
-		else
-			continue;
+		else {
+			if (seats[row - 1][col - 1] == 1) {
+				seats[row - 1][col - 1] = 0;
+				break;
+			}
+			if (seats[row - 1][col - 1] == 0) {
+				printf("예약되어있지 않은 자리입니다. 다른 자리를 선택해주세요.\n");
+				if (getch())
+					continue;
+			}
+			else
+				continue;
+		}
 	}
 }
 
