@@ -7,14 +7,16 @@ typedef struct member {
 	int age;		//나이
 	char id[15];	//아이디
 	char pw[20];	//비밀번호
-	SEAT seat[100];
+	SEAT rseat[100];
+	int res_num;
 }MEMBER;
 
-void login(MEMBER mem[10]);
+void login();
 void logout();
-void sign_up1(MEMBER mem[10]);
-void sign_up2(MEMBER mem[10]);		//회원가입 양식
-void create_id(MEMBER mem[10], int num);
-void check(MEMBER mem[10]);
+void sign_up1();
+void sign_up2();		//회원가입 양식
+int create_id(char id[15]);
+void check();
+int fcount();
 
 #endif

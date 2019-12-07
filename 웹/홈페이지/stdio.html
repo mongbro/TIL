@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title> What is C Language </title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="main.html" class="main"> What is C Language </a></h1>
+    </header>
+    <hr size="1px">
+    <ul class="list">
+        <li class="a"><a href="1. C언어 소개.html"> C언어 소개 </a></li>
+        <br>
+        <li class="a"><a href="2.개발자.html"> 개발자 </a></li>
+        <br>
+        <li class="a"><a href="3.주요 라이브러리.html">주요 라이브러리</a></li>
+        <ul>
+                <li class="a"><a href="stdio.html">stdio</a></li>
+                <li class="a"><a href="stdlib.html">stdlib</a></li>
+                <li class="a"><a href="string.html">string</a></li>
+            </ul>
+        <br>
+        <li class="a"><a href="4.문법.html">문법</a></li>
+        <ul>
+            <li class="a"><a href="연산자.html">연산자</a></li>
+            <li class="a"><a href="변수형.html">변수형</a></li>
+            <li class="a"><a href="포인터.html">포인터</a></li>
+        </ul>
+    </ul>
+    <div class="body">
+        <div class="top">
+            <h1 class="top">Stdio.h </h1>
+            <br>
+        </div>
+        <div class="second">
+            <h2>소개</h2>
+            <hr>
+            <p>stdio.h은 Standard Input/Output library (표준입출력 라이브러리)의 약어로써,<br>
+                C 언어의 표준 라이브러리 함수의 매크로 정의, 상수, 여러 형의 입출력 함수가 포함된 헤더 파일이다.<br>
+                1970년대, 벨 연구소의 마크 레스크가 쓴 "portable I/O package"[1]로부터 내려저 왔다.<br>
+                 C++에서는 호환성을 이유로 stdio.h 헤더 파일이 포함되어 있는 것과 마찬가지로 cstdio도 std 이름공간에서 stdio.h의 함수와 형식이 선언되어 있다.</p>
+        </div>
+
+        <div class="second">
+            <h2>예제</h2>
+            <hr>
+            <p>라이브러리 함수 (및 변종들)는 헤더 파일에 정의되어 있다. 그러므로, 프로그래머는 헤더 파일에 정의된 함수를 사용하기 위해 반드시 stdio.h 헤더 파일을 소스 코드에 포함해야 한다.
+            </p>
+            <img src="img/stdio예제사진.png">
+            <p>위의 프로그램은 바이트에 의해 바이트로 표준 입력으로 입력하고, 표준 출력으로 출력한다. 그리고 출력의 끝에 개행 문자를 추가한다.</p>
+
+        </div>
+
+        <div class="second">
+            <h2>멤버 함수</h2>
+            <hr>
+            <p>stdio.h에 선언되어 있는 함수는 일반적으로 파일 조작 함수와 콘솔 입출력 함수 둘로 구분된다.</p>
+            <table border="1">
+
+                <th >이름</th>
+                <th>해설</th>
+
+                <tr>
+                    <th colspan="2">파일 조작 함수</th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond"fopen, freopen</td>
+                    <td class="tsecond">파일을 읽거나 쓴다.</td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fclose</td>
+                    <td class="tsecond">파일을 닫는다.</td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">remove</td>
+                    <td class="tsecond">파일을 삭제한다.</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">name</td>
+                    <td class="tsecond">파일 이름을 바꿉니다.</td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">rewind</td>
+                    <td class="tsecond">파일 위치를 초기화한다.</td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">tmpfile</td>
+                    <td class="tsecond">임시 파일을 만들고 연다.fclose()로 닫으면 임시 파일이 삭제된다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">콘솔 입출력 함수</th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">clearerr</td>
+                    <td class="tsecond">end-of-file와 주어진 스트림에 대한 오류 지시자를 지운다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">feof</td>
+                    <td class="tsecond">end-of-file 지시자가 주어진 스트림으로 설정되어 있는지 검사한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">ferror</td>
+                    <td class="tsecond">오류 지시자가 주어진 스트림으로 설정되어 있는지 검사한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fflush</td>
+                    <td class="tsecond">보류 중인 버퍼된 <b>출력</b>을 주어진 스트림의 파일에 강제로 쓴다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fgetpos</td>
+                    <td class="tsecond">첫 번째 변수 (FILE *) 부터 두 번째 변수 (fpos_t *)의 파일 위치 지시자를 저장한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fgetc</td>
+                    <td class="tsecond">파일로부터 한 개의 문자를 리턴한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fgets</td>
+                    <td class="tsecond">파일로부터 문자열을 읽는다. (파일의 끝이거나 개행 문자의 끝)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fputc</td>
+                    <td class="tsecond">한 문자를 파일에 입력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fseek</td>
+                    <td class="tsecond">파일을 찾는다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fsetpos</td>
+                    <td class="tsecond">기억된 첫 번째 인수(FILE *) 두 번째 인수(fpos_t *) 까지의 파일 위치 지시자를 설정한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fread</td>
+                    <td class="tsecond">파일로부터 데이터를 읽어들입니다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fwrite</td>
+                    <td class="tsecond">파일로부터 데이터를 쓴다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">getc</td>
+                    <td class="tsecond">주어진 스트림으로부터 문자를 읽고 리턴한다. 강화된 파일 지시자로서, 주어진 스트림을 한 번 이상으로 평가하는 <code>fgetc</code>와 같은 효과를 내는
+                        매크로이다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">getchar</td>
+                    <td class="tsecond">getc와 같은 효과를 냅니다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">gets</td>
+                    <td class="tsecond">stdin이 개행문자를 발생시키고 인수에 저장할 때까지 문자를 읽는다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">printf, vprintf</td>
+                    <td class="tsecond">표준 출력 스트림에 출력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fprintf, vfprintf</td>
+                    <td class="tsecond">파일로 출력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">sprintf, snprintf,vsprintf, vsnprintf</td>
+                    <td class="tsecond">문자 배열로 출력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">perror</td>
+                    <td class="tsecond">stderr에 오류 메시지를 쓴다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">putc</td>
+                    <td class="tsecond">스트림에 문자를 쓴다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">putchar, fputchar</td>
+                    <td class="tsecond">putc(stdout)와 같은 효과를 낸다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">scanf, vscanf</td>
+                    <td class="tsecond">표준 입력 스트림으로 입력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">fscanf, vfscanf</td>
+                    <td class="tsecond">파일로 입력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">sscanf, vsscanf</td>
+                    <td class="tsecond">문자 배열로부터 입력한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">setbuf, setvbuf</td>
+                    <td class="tsecond">주어진 스트림에 버퍼링 모드로 전환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">tmpnam</td>
+                    <td class="tsecond">임시 파일을 만듭니다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> class="tsecond"ungetc</td>
+                    <td class="tsecond">문자를 스트림의 역순으로 읽는다
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">puts</td>
+                    <td class="tsecond">stdout에 문자, 문자열을 출력한다.
+                    </td>
+            </table>
+        </div>
+
+        <div class="second">
+            <h2>멤버 상수</h2>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th >이름</th>
+                    <th >해설
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">EOF</td>
+                    <td class="tsecond">end-of-file 절을 가리키는 용도로 사용되는 int형의 음의 정수.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">BUFSIZ</td>
+                    <td class="tsecond">setbuf() 함수에 의해 버퍼 크기를 나타내는 정수.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">FILENAME_MAX</td>
+                    <td class="tsecond">충분히 열 수 있는 저장 가능한 파일 이름의 char형의 배열 크기.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">FOPEN_MAX</td>
+                    <td class="tsecond">동시에 열 수 있는 파일의 개수; 최소 8
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">_IOFBF</td>
+                    <td class="tsecond">"input/output fully buffered"의 약어. 이 정수값은 setvbuf() 함수에 넘겨서 버퍼화된 블록의 스트림을 열기 위해 입출력에 요구한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">_IOLBF</td>
+                    <td class="tsecond">"input/output line buffered"의 약어. 이 정수값은 >setvbuf() 함수에 넘겨서 버퍼화된 라인의 스트림을 열기 위해 입출력에 요구한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">_IONBF</td>
+                    <td class="tsecond">"input/output not buffered"의 약어. 이 정수값은 setvbuf() 함수에 넘겨서 버퍼화 되지 않은 것을 스트림을 열기 위해 입출력에 요구한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">L_tmpnam</td>
+                    <td class="tsecond">char 배열이 tmpnam() 함수를 발생시킬 정도의 충분한 크기
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">NULL</td>
+                    <td class="tsecond">널 포인터의 약어인 매크로 상수. 이 상수는 메모리의 어떤 유효한 위치의 개체도 가리키지 않는 포인터 값이다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">SEEK_CUR</td>
+                    <td class="tsecond">fseek() 함수의 요구한 현재 파일 위치의 상대 위치를 나타내는 정수.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">SEEK_END</td>
+                    <td class="tsecond">fseek() 함수의 요구한 end of file의 상대 위치를 나타내는 정수.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">SEEK_SET</td>
+                    <td class="tsecond">fseek() 함수의 요구한 파일의 시작점의 상대 위치를 나타내는 정수.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">TMP_MAX</td>
+                    <td class="tsecond">tmpnam()</td> 함수가 생성가능한 최대 파일명 길이 (최소 25자)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="second">
+            <h2>멤버 변수</h2>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th >이름</th>
+                    <th >해설
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">stdin</td>
+                    <td class="tsecond">표준 입력 스트림(일반적으로 키보드)를 참조하는 FILE에 대한 포인터.</td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">stdout</td>
+                    <td class="tsecond">표준 출력 스트림(일반적으로 디스플레이 터미널)을 참조하는 FILE에 대한 포인터.</td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">stderr</td>
+                    <td class="tsecond">표준 오류 스트림(항상 디스플레이 터미널)을 참조하는 FILE에 대한 포인터.</td>
+                </tr>
+
+
+
+            </table>
+
+        </div>
+        <div class="second">
+            <h2>멤버 형식</h2>
+            <hr>
+            <ul style="all: none;">
+                <li>FILE - 입출력 작동에 필요한 파일/텍스트 스트림에 대한 정보를 포함하는 구조다.
+                    <ul>
+                        <li>파일 서술자</li>
+                        <li>현재 스트림 위치.</li>
+                        <li>end-of-file 지시자</li>
+                        <li>오류 지시자</li>
+                        <li>적용 가능할 경우, 스트림의 버퍼에 대한 포인터.</li>
+                    </ul>
+                </li>
+                <li>fpos_t - 유일하게 파일의 바이트 위치를 식별할 수 있는 비 배열 형식.</li>
+                <li>size_t - sizeof 연산자의 결과값을 나타내는 형식의 양의 정수형.</li>
+            </ul>
+
+        </div>
+        <hr>
+        <footer>
+            * 참조 : Wikipidia
+        </footer>
+    </div>
+
+    <!-- 여기까지 바디 -->
+
+    <aside>
+        <a href="#top">
+            <button class="button">top</button>
+        </a>
+    </aside>
+
+    <!-- 여기까지 어사이드 -->
+
+</body>
+
+</html>

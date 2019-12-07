@@ -8,10 +8,19 @@ void login(MEMBER mem[10]) {
 	char user_id[15] = { 0 }, user_pw[20] = { 0 };
 	int count = 0;
 	int flag;
-	int fail;
+	int fail, num = 0;
+	MEMBER d;
+	FILE* fp;
 	extern int log;
-	extern int lognum;
 	extern void menu();
+	fp = fopen("info.dat", "rb");
+	while (1) {
+		fread(&d, sizeof(MEMBER), 1, fp);
+		if (feof(fp) != 0)
+			break;
+		num++;
+	}
+	fclose(fp);
 	while (1) {
 		fail = 0;
 		flag = 0;
@@ -115,28 +124,34 @@ void sign_up1(MEMBER mem[10]) {
 }
 
 void sign_up2(MEMBER mem[10]) {
-	int num;
-	for (int i = 0; i < 10; i++) {
-		if (mem[i].flag == 0) {
-			num = i;
-			mem[i].memnum = num;
-			break;
-		}
-	}
+	FILE* fp;
+	MEMBER d;
+	int num = 0;
 	while (1) {
+		fp = fopen("info.dat", "rb");
+		while (1) {
+			fread(&d, sizeof(MEMBER), 1, fp);
+			if (feof(fp) != 0)
+				break;
+			num++;
+		}
+		fclose(fp);
 		system("cls");
 		printf("\n");
 		printf("  이름 : ");
 		scanf("\n%[^\n]s", mem[num].name);
 		printf("  나이 : ");
-		scanf("\n%[^\n]s", &mem[num].age);
+		scanf("\n%d", &mem[num].age);
 		create_id(mem, num);
 		printf("  PW : ");
 		scanf("\n%[^\n]s", mem[num].pw);
 
 		printf("회원가입이 완료되었습니다.\n");
-		mem[num].flag = 1;
-		break;
+		fp = fopen("info.dat", "ab");
+		fwrite(&mem[num], sizeof(MEMBER), 1, fp);
+		fclose(fp);
+		if (getch())
+			break;
 	}
 }
 
@@ -144,7 +159,7 @@ void create_id(MEMBER mem[10], int num) {
 	printf("  ID : ");
 	scanf("\n%[^\n]s", mem[num].id);
 	for (int i = 0; i < strlen(mem[num].id); i++) {
-		if (isalnum(*(mem[num].id + i)) == 0) {
+		if (isalnum(mem[num].id[i]) == 0) {
 			printf("아이디는 알파벳과 숫자의 조합입니다.\n");
 			printf("다른 ID를 사용해주세요.");
 			create_id(mem, num);
@@ -158,4 +173,28 @@ void create_id(MEMBER mem[10], int num) {
 		}
 	}
 	return;
+}
+
+void check(MEMBER mem[10]) {
+	FILE* fp;
+	MEMBER list;
+	int num = 0;
+	while (1) {
+		fp = fopen("info.dat", "rb");
+		while (1) {
+			fread(&list, sizeof(MEMBER), 1, fp);
+			if (feof(fp) != 0)
+				break;
+			num++;
+		}
+		fclose(fp);
+		fopen("info.dat", "rb");
+		for (int i = 0; i < num; i++) {
+			fread(&list, sizeof(MEMBER), 1, fp);
+			printf("%s  %d  %s  %s\n", list.name, list.age, list.id, list.pw);
+		}
+		fclose(fp);
+		if (getch())
+			break;
+	}
 }

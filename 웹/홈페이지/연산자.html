@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title> What is C Language </title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="main.html" class="main"> What is C Language </a></h1>
+    </header>
+    <hr size="1px">
+    <ul class="list">
+        <li class="a"><a href="1. C언어 소개.html"> C언어 소개 </a></li>
+        <br>
+        <li class="a"><a href="2.개발자.html"> 개발자 </a></li>
+        <br>
+        <li class="a"><a href="3.주요 라이브러리.html">주요 라이브러리</a></li>
+        <ul>
+            <li class="a"><a href="stdio.html">stdio</a></li>
+            <li class="a"><a href="stdlib.html">stdlib</a></li>
+            <li class="a"><a href="string.html">string</a></li>
+        </ul>
+        <br>
+        <li class="a"><a href="4.문법.html">문법</a></li>
+        <ul>
+            <li class="a"><a href="연산자.html">연산자</a></li>
+            <li class="a"><a href="변수형.html">변수형</a></li>
+            <li class="a"><a href="포인터.html">포인터</a></li>
+        </ul>
+    </ul>
+    <div class="body">
+        <div class="top">
+            <p class="top"> 연산자 </p>
+            <br>
+
+        </div>
+        <div class="second">
+            <h2> 연산자 표</h2>
+            <hr>
+
+            <ol class="innerlist">
+                    <ul class="inner"><a href="#산술연산자">1. 산술연산자</a></ul>
+                    <ul class="inner"><a href="#비교연산자 / 관계연산자">2. 비교연산자 / 관계연산자</a></ul>
+                    <ul class="inner"><a href="#논리연산자">3. 논리연산자</a></ul>
+                    <ul class="inner"><a href="#비트연산자">4. 비트연산자</a></ul>
+                    <ul class="inner"><a href="#연산자 우선순위">5. 연산자 우선순위</a></ul>
+            </ol>            
+            <p>이 표에서 a, b, c는 경우에 따라 유효한 값(리터럴, 변수 값, 반환 값), 개체 이름, 왼쪽 값(lvalue)을 나타낸다.
+                R, S, T는 자료형을 나타내고 K는 클래스나 열거형을 나타낸다.</p>
+        </div>
+        <div class="second">
+            <h2 id="산술연산자">1. 산술연산자</h2>
+            <hr>
+            <table border="1">
+                <th colspan="2" style="width: 140px;">연산자 이름</th>
+                <th style="width: 70px;">구문</th>
+                <th style="width: 400px;">T의 멤버로서</th>
+                <th style="width: 400px;">외부 클래스 정의</th>
+                <tr>
+                    <td class="tsecond" colspan="2"> 기본 할당</td>
+                    <td class="tsecond"> a = b</td>
+                    <td class="tsecond"> T& T::operator=(const T& b);</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">덧셈</td>
+                    <td class="tsecond">a + b</td>
+                    <td class="tsecond"> T T::operator+(const T& b) const;</td>
+                    <td class="tsecond"> T operator+(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">뺄셈</td>
+                    <td class="tsecond">a - b</td>
+                    <td class="tsecond">T T::operator-(const T& b) const;</td>
+                    <td class="tsecond">T operator-(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">단항 덧셈<br>(정수 승급)</td>
+                    <td class="tsecond">+a</td>
+                    <td class="tsecond">T T::operator+() const;</td>
+                    <td class="tsecond">T operator+(const T& a);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">당항 뺄셈<br>(반수)</td>
+                    <td class="tsecond">-a</td>
+                    <td class="tsecond">T T::operator-() const;</td>
+                    <td class="tsecond">T operator-(const T& a);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">곱셈</td>
+                    <td class="tsecond">a * b</td>
+                    <td class="tsecond">T T::operator*(const T& b) const;</td>
+                    <td class="tsecond">T operator*(const T &a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">나눗셈</td>
+                    <td class="tsecond">a / b</td>
+                    <td class="tsecond">T T::operator/(const T& b) const;</td>
+                    <td class="tsecond">T operator/(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2">모튤러<br>(나머지)</td>
+                    <td class="tsecond">a % b</td>
+                    <td class="tsecond">T T::operator%(const T& b) const;</td>
+                    <td class="tsecond">T operator%(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" rowspan="2">증가</td>
+                    <td class="tsecond">전위</td>
+                    <td class="tsecond">++a</td>
+                    <td class="tsecond">T& T::operator++();</td>
+                    <td class="tsecond">T& operator++(T& a);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">후위</td>
+                    <td class="tsecond">a++</td>
+                    <td class="tsecond">T T::operator++(int);</td>
+                    <td class="tsecond">T operator++(T& a, int);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" rowspan="2">감소</td>
+                    <td class="tsecond">전위</td>
+                    <td class="tsecond">--a</td>
+                    <td class="tsecond">T& T::operator--();</td>
+                    <td class="tsecond">T& operator--(T& a);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">후위</td>
+                    <td class="tsecond">a--</td>
+                    <td class="tsecond">T T::operator--(int);</td>
+                    <td class="tsecond">T operator--(T& a, int);</td>
+                </tr>
+            </table>
+        </div>
+        <div class="second">
+            <h2 id="비교연산자 / 관계연산자">2. 비교연산자 / 관계연산자</h2>
+            <hr>
+            <table border="1">
+                <th colspan="2" style="width: 140px;">연산자 이름</th>
+                <th style="width: 70px;">구문</th>
+                <th style="width: 400px;">T의 멤버로서</th>
+                <th style="width: 400px;">외부 클래스 정의</th>
+                <tr>
+                    <td class="tsecond" colspan="2"> 같음</td>
+                    <td class="tsecond"> a == b</td>
+                    <td class="tsecond"> bool T::operator==(const T& b) const;</td>
+                    <td class="tsecond"> bool operator==(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 같지 않음</td>
+                    <td class="tsecond"> a != b</td>
+                    <td class="tsecond"> bool T::operator!=(const T& b) const;</td>
+                    <td class="tsecond"> bool operator!=(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 큼</td>
+                    <td class="tsecond"> a &gt; b</td>
+                    <td class="tsecond"> bool T::operator&gt;(const T& b) const;</td>
+                    <td class="tsecond"> bool operator&gt;(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 작음</td>
+                    <td class="tsecond"> a &lt; b</td>
+                    <td class="tsecond"> bool T::operator&lt;(const T& b) const;</td>
+                    <td class="tsecond"> bool operator&lt;(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 크거나 같음</td>
+                    <td class="tsecond"> a &gt;= b</td>
+                    <td class="tsecond"> bool T::operator&gt;=(const T& b) const;</td>
+                    <td class="tsecond"> bool operator&gt;=(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 작거나 같음</td>
+                    <td class="tsecond"> a &lt;= b</td>
+                    <td class="tsecond"> bool T::operator&lt;=(const T& b) const;</td>
+                    <td class="tsecond"> bool operator&lt;=(const T& a, const T& b);</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="second">
+            <h2 id="논리연산자">3. 논리연산자</h2>
+            <hr>
+            <table border="1">
+                <th colspan="2" style="width: 140px;">연산자 이름</th>
+                <th style="width: 70px;">구문</th>
+                <th style="width: 400px;">T의 멤버로서</th>
+                <th style="width: 400px;">외부 클래스 정의</th>
+                <tr>
+                    <td class="tsecond" colspan="2"> 논리적 부정<br>(NOT)</td>
+                    <td class="tsecond"> !a</td>
+                    <td class="tsecond"> bool T::operator!() const;</td>
+                    <td class="tsecond"> bool operator!(const T& a);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 논리적 AND</td>
+                    <td class="tsecond"> a && b</td>
+                    <td class="tsecond"> bool T::operator&&(const T& b) const;</td>
+                    <td class="tsecond"> bool operator&&(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 논리적 OR</td>
+                    <td class="tsecond"> a || b</td>
+                    <td class="tsecond"> bool T::operator||(const T& b) const;</td>
+                    <td class="tsecond"> bool operator||(const T& a, const T& b);</td>
+                </tr>
+            </table>
+        </div>
+        <div class="second">
+            <h2 id="비트연산자">4. 비트연산자</h2>
+            <hr>
+            <table border="1">
+                <th colspan="2" style="width: 140px;">연산자 이름</th>
+                <th style="width: 70px;">구문</th>
+                <th style="width: 400px;">T의 멤버로서</th>
+                <th style="width: 400px;">외부 클래스 정의</th>
+                <tr>
+                    <td class="tsecond" colspan="2"> 비트 NOT</td>
+                    <td class="tsecond"> ~a</td>
+                    <td class="tsecond"> T T::operator~() const;</td>
+                    <td class="tsecond"> T operator~(const T& a);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 비트 AND</td>
+                    <td class="tsecond"> a & b</td>
+                    <td class="tsecond"> T T::operator&(const T& b) const;</td>
+                    <td class="tsecond"> T operator&(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 비트 OR</td>
+                    <td class="tsecond"> a | b</td>
+                    <td class="tsecond"> T T::operator|(const T& b) const;</td>
+                    <td class="tsecond"> T operator|(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 비트 XOR</td>
+                    <td class="tsecond"> a ^ b</td>
+                    <td class="tsecond"> T T::operator^(const T& b) const;</td>
+                    <td class="tsecond"> T operator^(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 비트 왼쪽 시프트</td>
+                    <td class="tsecond"> a &lt;&lt; b</td>
+                    <td class="tsecond"> T T::operator&lt;&lt;(const T& b) const;</td>
+                    <td class="tsecond"> T operator&lt;&lt;(const T& a, const T& b);</td>
+                </tr>
+                <tr>
+                    <td class="tsecond" colspan="2"> 비트 오른쪽 시프트</td>
+                    <td class="tsecond"> a &gt;&gt; b</td>
+                    <td class="tsecond"> T T::operator&gt;&gt;(const T& b) const;</td>
+                    <td class="tsecond"> T operator&gt;&gt;(const T& a, const T& b);</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="second">
+            <h2 id="연산자 우선순위">5. 연산자 우선순위</h2>
+            <hr>
+            <p>다음은 C와 C++ 언어에서 모든 연산자의 우선순위와 결합법칙을 나열하는 표이다. 연산자는 내림차순 우선순위에서, 위에서 아래로 나열된다.
+                우선순위 내림차순은 연산자와 피연산자를 묶는 행위의 우선순서를 나타낸다. 표현식을 고려해서, 어떤 행 위에 나열된 연산자는 그것의 더
+                아래쪽 행 위에 나열된 모든 연산자의 이전에 피연산자와 묶인다. 같은 셀에 있는 연산자는 주어진 결합법칙의 방향대로 피연산자와 묶인다.
+                연산자의 우선순위는 오버로딩에 의해 영향받지않는다. 연산자의 피연산자들이 모두 평가된 후에 그 연산자로 결과값이 계산되는 순서로 평가된다.
+                C와 C++에서 표현식의 구문은 문맥 자유 문법에 의해 지정된다. 여기에 주어진 표는 문법으로부터 추론되었다.
+                ISO C 1999년 표준에 대해, C 연산자의 우선순위를 정의하는 사양에 의해 제공되는 C 문법을 정하고,
+                또한 사양의 항목 순서를 밀접하게 따라가는 문법으로 인한 연산자 우선순위를 정한다 </p>
+            <br>
+            <table border="1">
+                <th style="width: 140px;">우선순위</th>
+                <th style="width: 70px;">연산자</th>
+                <th style="width: 400px;">설명</th>
+                <th style="width: 400px;">결합법칙</th>
+                <tr>
+                    <td class="tsecond">
+                        <center> 1 </center>
+                    </td>
+                    <td class="tsecond"> ++<br>--<br>()<br>[]<br>.<br>-&gt;</td>
+                    <td class="tsecond"> 후위증가<br>후위감소<br>함수호출<br>배열첨자<br>참조에 의한 요소 선택<br>포인터를 통해 요서 선택</td>
+                    <td class="tsecond"> 왼쪽에서 오른쪽</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 2 </center>
+                    </td>
+                    <td class="tsecond"> ++<br>--<br>+<br>-<br>!<br>~<br>(자료형)<br>*<br>&<br>sizeof</td>
+                    <td class="tsecond"> 전위증가<br>전위감소<br>단항덧셈<br>단항뺄셈<br>논리적 NOT<br>비트 NOT<br>자료형 캐스트<br>우회(역참조)<br>의
+                        주소<br>의 크기</td>
+                    <td class="tsecond"> 왼쪽에서 오른쪽</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 3 </center>
+                    </td>
+                    <td class="tsecond"> *<br>/<br>%</td>
+                    <td class="tsecond"> 곱셈<br>나눗셈<br>계수(나머지)</td>
+                    <td class="tsecond" rowspan="9"> 왼쪽에서 오른쪽</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 4 </center>
+                    </td>
+                    <td class="tsecond"> &lt;&lt;<br>&gl;&gl;</td>
+                    <td class="tsecond"> 비트 왼쪽 시프트<br>비트 오른쪽 시프트</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 5 </center>
+                    </td>
+                    <td class="tsecond"> &lt;<br>&lt;=<br>&gl;<br>&gl;=</td>
+                    <td class="tsecond"> 관계적 연산자들에 대해 &lt; 각각의<br>관계적 연산자들에 대해 &lt;= 각각의<br>관계적 연산자들에 대해 &gl; 각각의<br>관계적
+                        연산자들에 대해 &gl;= 각각의</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 6 </center>
+                    </td>
+                    <td class="tsecond"> ==<br>!=</td>
+                    <td class="tsecond"> 관계적 = 각각의<br>관계적 != 각각의</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 7 </center>
+                    </td>
+                    <td class="tsecond"> &</td>
+                    <td class="tsecond"> 비트 AND</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 8 </center>
+                    </td>
+                    <td class="tsecond"> ^</td>
+                    <td class="tsecond"> 비트 XOR</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 9 </center>
+                    </td>
+                    <td class="tsecond"> |</td>
+                    <td class="tsecond"> 비트 OR</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 10 </center>
+                    </td>
+                    <td class="tsecond"> &&</td>
+                    <td class="tsecond"> 논리 AND</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 11 </center>
+                    </td>
+                    <td class="tsecond"> ||</td>
+                    <td class="tsecond"> 논리 OR</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 12 </center>
+                    </td>
+                    <td class="tsecond"> ?:</td>
+                    <td class="tsecond"> 3항 연산자 조건부</td>
+                    <td class="tsecond" rowspan="2"> 오른쪽에서 왼쪽</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 13 </center>
+                    </td>
+                    <td class="tsecond"> =<br>+=<br>-=<br>*=<br>/=<br>%=<br>&lt;&lt;=<br>&gl;&gl;=<br>&=<br>^=<br>!=
+                    </td>
+                    <td class="tsecond"> 직접 할당<br>덧셈에 의한 할당<br>뺄셈에 의한 할당<br>곱셈에 의한 할당<br>나눗셈에 의한 할당<br>
+                        나머지에 의한 할당<br>비트 왼쪽 시프트에 의한 할당<br>비트 오른쪽 시프트에 의한 할당<br>비트 AND에 의한 할당<br>
+                        비트 XOR에 의한 할당<br>비트 OR에 의한 할당</td>
+                </tr>
+                <tr>
+                    <td class="tsecond">
+                        <center> 14 </center>
+                    </td>
+                    <td class="tsecond"> ,</td>
+                    <td class="tsecond"> 쉼표</td>
+                    <td class="tsecond"> 왼쪽에서 오른쪽</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <footer>
+            * 참조 : Wikipidia
+        </footer>
+    </div>
+
+    <!-- 여기까지 바디 -->
+
+    <aside>
+        <a href="#top">
+            <button class="button">top</button>
+        </a>
+    </aside>
+
+    <!-- 여기까지 어사이드 -->
+
+</body>
+
+</html>

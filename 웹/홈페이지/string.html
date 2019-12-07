@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title> What is C Language </title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="main.html" class="main"> What is C Language </a></h1>
+    </header>
+    <hr size="1px">
+    <ul class="list">
+        <li class="a"><a href="1. C언어 소개.html"> C언어 소개 </a></li>
+        <br>
+        <li class="a"><a href="2.개발자.html"> 개발자 </a></li>
+        <br>
+        <li class="a"><a href="3.주요 라이브러리.html">주요 라이브러리</a></li>
+        <ul>
+                <li class="a"><a href="stdio.html">stdio</a></li>
+                <li class="a"><a href="stdlib.html">stdlib</a></li>
+                <li class="a"><a href="string.html">string</a></li>
+            </ul>
+        <br>
+        <li class="a"><a href="4.문법.html">문법</a></li>
+        <ul>
+            <li class="a"><a href="연산자.html">연산자</a></li>
+            <li class="a"><a href="변수형.html">변수형</a></li>
+            <li class="a"><a href="포인터.html">포인터</a></li>
+        </ul>
+    </ul>
+    <div class="body">
+        <div class="top">
+            <h3>주요 라이브러리</h3>
+            <h1 class="top">String.h</h1>
+            <br>
+
+        </div>
+        <div class="second">
+            <h2>소개</h2>
+            <hr>
+            <p>stdlib.h는 C 언어의 표준 라이브러리로, 문자열 변환, 의사 난수 생성, 동적 메모리 관리 등의 함수들을 포함하고 있다.</p>
+        </div>
+
+        <div class="second">
+            <h2>예제</h2>
+            <hr>
+            <p>다음 예제는 Hello World 문자열의 길이를 구해 출력한다. 결과는 11이 출력될 것이다.</p>
+            <img src="img/string예제사진.png">
+        </div>
+
+        <div class="second">
+            <h2>함수</h2>
+            <hr>
+            <p>string.h는 C 언어의 표준 라이브러리로, 메모리 블록이나 문자열을 다룰 수 있는 함수들을 포함하고 있다. 유니코드 문자열을 다루려면 wchar.h를 사용한다.</p>
+            <table border="1">
+                <tr>
+                    <th></th>함수</th>
+                    <th>설명
+                    </th>
+                </tr>
+
+                <tr>
+                    <th colspan="2">복사
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">void * <b>memcpy</b> ( void * destination, const void * source, size_t num );
+                    </td>
+                    <td class="tsecond">source가 가리키는 곳 부터 num바이트 만큼을 destination이 가리키는 곳에 복사한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">void * <b>memmove</b> ( void * destination, const void * source, size_t num );
+                    </td>
+                    <td class="tsecond">source가 가리키는 곳 부터 num바이트 만큼을 destination이 가리키는 곳으로 옮긴다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strcpy</b> ( char * destination, const char * source );
+                    </td>
+                    <td class="tsecond">source를 destination에 복사한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strncpy</b> ( char * destination, const char * source, size_t num );
+                    </td>
+                    <td class="tsecond">source에서 destination으로 처음 num개의 문자들을 복사한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">병합
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strcat</b> ( char * destination, const char * source );
+                    </td>
+                    <td class="tsecond">source를 destination뒤에 붙인다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strncat</b> ( char * destination, char * source, size_t num );
+                    </td>
+                    <td class="tsecond">source에서 destination뒤에 처음 num개의 문자들을 붙인다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">비교
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">int <b>memcmp</b> ( const void * ptr1, const void * ptr2, size_t num );
+                    </td>
+                    <td class="tsecond">ptr1이 가리키는 처음 num바이트의 데이터와 ptr2가 가리키는 처음 num바이트의 데이터를 비교한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">int <b>strcmp</b> ( const char * str1, const char * str2 );
+                    </td>
+                    <td class="tsecond">str1과 str2를 비교한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">int <b>strcoll</b> ( const char * str1, const char * str2 );
+                    </td>
+                    <td class="tsecond">strcmp와 비슷하지만 LC_COLLATE에 정의되어 있는 방식에 따라 해석 된 후 비교한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">int <b>strncmp</b> ( const char * str1, const char * str2, size_t num );
+                    </td>
+                    <td class="tsecond">str1의 처음 num개의 문자를 str2의 처음 num개의 문자와 비교한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">size_t <b>strxfrm</b> ( char * destination, const char * source, size_t num );
+                    </td>
+                    <td class="tsecond">source를 현재 지역 정보에 따라 문자열을 변환한 후 변환한 문자열의 처음 num개 문자를 destination에 복사한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">탐색
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">void * <b>memchr</b> ( const void * ptr, int value, size_t num );
+                    </td>
+                    <td class="tsecond">ptr이 가리키는 메모리의 처음 num바이트 중에서 처음으로 value와 일치하는 값(문자)의 주소를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strchr</b> ( const char * str, int character );
+                    </td>
+                    <td class="tsecond">str에서 처음으로 character와 일치하는 문자의 주소를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">size_t <b>strcspn</b> ( const char * str1, const char * str2 );
+                    </td>
+                    <td class="tsecond">str2에 들어있는 문자들 중 str1에 들어있는 문자와 일치하는 것이 있다면 첫 번째로 일치하는 문자까지 읽어들인 수를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strpbrk</b> ( const char * str1, const char * str2 );
+                    </td>
+                    <td class="tsecond">str1에서 str2에 들어 있는 문자들을 찾아 str2의 문자들 중 str1의 문자들과 첫 번째로 일치하는 문자의 주소를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strrchr</b> ( const char * str, int character );
+                    </td>
+                    <td class="tsecond">str에서 마지막으로 character와 일치하는 문자의 주소를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">size_t <b>strspn</b> ( const char * str1, const char * str2 );
+                    </td>
+                    <td class="tsecond">str2의 문자들만을 포함하고 있는 str1의 처음 부분의 길이를 구한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strstr</b> ( const char * str1, const char * str2 );
+                    </td>
+                    <td class="tsecond">str1에서 str2를 검색하여 가장 먼저 나타나는 곳의 위치를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strtok</b> ( char * str, const char * delimiters );
+                    </td>
+                    <td class="tsecond">str1을 delimiters의 문자들로 분리한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">기타
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">void * <b>memset</b> ( void * ptr, int value, size_t num );
+                    </td>
+                    <td class="tsecond">ptr이 가리키는 메모리의 처음 num바이트를 value값(문자)으로 채운다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">char * <b>strerror</b> ( int errnum );
+                    </td>
+                    <td class="tsecond">errnum(보통 errno)을 해석한 뒤 그에 해당하는 에러 문자열의 포인터를 반환한다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">size_t <b>strlen</b> ( const char * str );</td>
+                    <td class="tsecond">str의 길이를 반환한다.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="second">
+            <h2> 변수, 상수, 형식</h2>
+            <hr>
+            <table border="1" class="wikitable">
+                <tr>
+                    <th style="width: 70px;">이름</th>
+                    <th>설명
+                    </th>
+                </tr>
+
+                <tr>
+                    <th colspan="2">상수
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">NULL
+                    </td>
+                    <td class="tsecond">널 포인터의 약어인 상수. 이 상수는 메모리의 어떤 유효한 위치의 개체도 가리키지 않는 포인터 값이다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">형식 정의
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="tsecond">size_t
+                    </td>
+                    <td> class="tsecond"sizeof 연산자의 결과값을 나타내는 정수(unsigned int)이다.
+                    </td>
+                </tr>
+
+            </table>
+            <br><br><br>
+        </div>
+
+        <hr>
+        <footer>
+            * 참조 : Wikipidia
+        </footer>
+    </div>
+
+    <!-- 여기까지 바디 -->
+
+    <aside>
+        <a href="#top">
+            <button class="button">top</button>
+        </a>
+    </aside>
+
+    <!-- 여기까지 어사이드 -->
+
+</body>
+
+</html>

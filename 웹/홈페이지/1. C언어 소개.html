@@ -5,35 +5,38 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
     <title> What is C Language </title>
+    <script src="script.js"></script>
 </head>
 
 <body>
     <header>
         <h1 class="title"><a href="main.html" class="main"> What is C Language </a></h1>
     </header>
-    <hr size="1px" class="main">
+    <hr size="1px">
     <ul class="list">
-        <li><a href="2.개발자.html"> 개발자 </a></li>
+        <li class="a"><a href="1. C언어 소개.html"> C언어 소개 </a></li>
         <br>
-        <li>주요 라이브러리</li>
+        <li class="a"><a href="2.개발자.html"> 개발자 </a></li>
+        <br>
+        <li class="a"><a href="3.주요 라이브러리.html">주요 라이브러리</a></li>
         <ul>
-            <li>stdio</li>
-            <li>stdlib</li>
-            <li>string</li>
+            <li class="a"><a href="stdio.html">stdio</a></li>
+            <li class="a"><a href="stdlib.html">stdlib</a></li>
+            <li class="a"><a href="string.html">string</a></li>
         </ul>
         <br>
-        <li class="a">문법</li>
+        <li class="a"><a href="4.문법.html">문법</a></li>
         <ul>
-            <li>cca</li>
-            <li>ccb</li>
-            <li>ccc</li>
+            <li class="a"><a href="연산자.html">연산자</a></li>
+            <li class="a"><a href="변수형.html">변수형</a></li>
+            <li class="a"><a href="포인터.html">포인터</a></li>
         </ul>
     </ul>
     <div class="body">
         <div class="top">
             <p class="top"> C언어 소개 </p>
             <br>
-            <img class="main" src="C언어 사진.png" alt="C언어 사진.png"
+            <img class="main" src="img/C언어 사진.png" alt="C언어 사진.png"
                 style="margin-left: auto; margin-right: auto; display: block;">
 
             <div class="second">
@@ -43,7 +46,6 @@
                     켄 톰슨은 BCPL언어를 필요에 맞추어 개조해서 "B"언어(언어를 개발한 벨 연구소의 B를 따서)라 명명했고, 데니스 리치가 이것을 개선하여 C 언어가
                     탄생했다. <br>유닉스 시스템의 바탕 프로그램은 모두 C로 작성되었고, 수많은 운영 체제의 커널 또한 C로 만들어졌다. 오늘날 많이 쓰이는 C++는 C에서
                     객체 지향형 언어로 발전된 것이다. 또 다른 다양한 최신 언어들도 그 뿌리를 C에 두고 있다.</p>
-
             </div>
             <div class="second">
                 <h2> 개요 </h2>
@@ -53,21 +55,25 @@
                     성능이 아직까지도 C 언어가 사랑받는 이유 중 하나이다.<br>>이는 반면 오늘날의 널리 쓰이는 거의 모든 운영 체제 커널이 C를 이용해 구현된 이유이기도 하다. 이처럼 C는
                     시스템 프로그램 개발에 매우
                     적합하지만, 응용 프로그램 개발에도 많이 쓰이기도 한다.</p>
-
             </div>
             <div class="second">
                 <h2> 역사 </h2>
                 <hr>
-                <ul>1963년 - ALGOL 60에서 CPL이 파생</ul>
-                <ul>1969년 - BCPL 개발</ul>
-                <ul>1970년 - B 언어 개발</ul>
-                <ul>1972년 - 벨 연구소 (Bell Laboratories) 에 있는 Dennis Ritchie가 B의 후속으로 C 개발</ul>
-                <ul>1983년 - 미국 국가 표준 협회(ANSI, American National Standards Institute) 에서 짐 브로디(Jim Brodie) 주축으로 X3J11 위원회
-                    소집</ul>
-                <ul>1983년 12월 14일 - ANSI X3.159-1989 라는 공식명칭으로 C 언어 표준 지정</ul>
-                <ul>1999년 - C99 표준안이 ISO/IEC 9899:1999라는 명칭으로 출간됨</ul>
-                <ul>2000년 5월 - ANSI의 표준으로 C99가 채택됨</ul>
-                <ul>2011년 - 12월 8일 C11 표준안이 ISO/IEC 9899:2011라는 명칭으로 출간됨</ul>
+                <div id="detail">
+                    <button onclick="detail()">펼치기</button>
+                    <ul class="hide">
+                        <li>1963년 - ALGOL 60에서 CPL이 파생</li>
+                        <li>1969년 - BCPL 개발</li>
+                        <li>1970년 - B 언어 개발</li>
+                        <li>1972년 - 벨 연구소 (Bell Laboratories) 에 있는 Dennis Ritchie가 B의 후속으로 C 개발</il>
+                        <li>1983년 - 미국 국가 표준 협회(ANSI, American National Standards Institute) 에서 짐 브로디(Jim Brodie) 주축으로 X3J11 위원회
+                            소집</li>
+                        <li>1983년 12월 14일 - ANSI X3.159-1989 라는 공식명칭으로 C 언어 표준 지정</li>
+                        <li>1999년 - C99 표준안이 ISO/IEC 9899:1999라는 명칭으로 출간됨</li>
+                        <li>2000년 5월 - ANSI의 표준으로 C99가 채택됨</li>
+                        <li>2011년 - 12월 8일 C11 표준안이 ISO/IEC 9899:2011라는 명칭으로 출간됨</li>
+                    </ul>
+                </div>
             </div>
             <div class="second">
                 <h2> 초기 개발 </h2>
@@ -83,18 +89,21 @@
                     ALGOL로 쓰인 Burroughs B5000을 위한 MCP(Master Control Program)가 있다.) 1977년 경, 리치와 스티븐 C. 존슨이 유닉스 운영체제의
                     이식성을
                     향상시키기 위해, C 언어를 추가적으로 변경하였다. 존슨의 Portable C Compiler는 새로운 플랫폼에서의 C의 구현의 기초가 되었다.</p>
-
             </div>
+            <hr>
+            <footer>
+                * 참조 : Wikipidia
+            </footer>
         </div>
 
         <!-- 여기까지 바디 -->
 
         <aside>
-            <a href="#top" class="gotop">
-                <button>top</button>
+            <a href="#top">
+                <button class="button">top</button>
             </a>
         </aside>
-
+    </div>
         <!-- 여기까지 어사이드 -->
 
 </body>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title> What is C Language </title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="main.html" class="main"> What is C Language </a></h1>
+    </header>
+    <hr size="1px">
+    <ul class="list">
+        <li class="a"><a href="1. C언어 소개.html"> C언어 소개 </a></li>
+        <br>
+        <li class="a"><a href="2.개발자.html"> 개발자 </a></li>
+        <br>
+        <li class="a"><a href="3.주요 라이브러리.html">주요 라이브러리</a></li>
+        <ul>
+            <li class="a"><a href="stdio.html">stdio</a></li>
+            <li class="a"><a href="stdlib.html">stdlib</a></li>
+            <li class="a"><a href="string.html">string</a></li>
+        </ul>
+        <br>
+        <li class="a"><a href="4.문법.html">문법</a></li>
+        <ul>
+            <li class="a"><a href="연산자.html">연산자</a></li>
+            <li class="a"><a href="변수형.html">변수형</a></li>
+            <li class="a"><a href="포인터.html">포인터</a></li>
+        </ul>
+    </ul>
+    <div class="body">
+        <div class="top">
+            <p class="top"> 주요 라이브러리 </p>
+            <br>
+        </div>
+        <div class="second">
+            <h2> 소개</h2>
+            <hr>
+            <p>C 언어 함수는 표준함수가 있고, 개발 툴에서 제공하는 함수가 있다. 여러가지 부류가 있고 특성별로
+                나누어 lib 파일로 코드를 제공하고 헤더파일로 선언을 알 수 있다.  <br>
+            C언어 라이브러리는 함수 형태와 기능이 정해져 있기 때문에 개발툴별 같다는 특징이 있다.</p>
+        </div>
+        <div class="second">
+            <h2> ISO C 라이브러리 헤더</h2>
+            <hr>
+            <table border="1">
+                <th style="width: 110px;">파일명</th>
+                <th style="width: 45px;">출처</th>
+                <th style="width: 900px;">설명</th>
+
+                <tr>
+                    <td>&lt;assert.h&gt;</td>
+                    <td></td>
+                    <td>assert 매크로, 논리 오류 및 디버깅 시 오류 형 등 지원한다.</td>
+                </tr>
+                <tr>
+                    <td>&lt;complex.h&gt;</td>
+                    <td>C99</td>
+                    <td>복소수 처리용 세트.</td>
+                </tr>
+                <tr>
+                    <td>&lt;ctype.h&gt;</td>
+                    <td></td>
+                    <td>초기의 대-소 문자 변환 함수 제공.</td>
+                </tr>
+                <tr>
+                    <td>&lt;errno.h&gt;</td>
+                    <td></td>
+                    <td>함수에서 발행하는 오류 형태 변환등의 오류처리.</td>
+                </tr>
+                <tr>
+                    <td>&lt;fenv.h&gt;</td>
+                    <td>C99</td>
+                    <td>부동소수점 환경 제어.</td>
+                </tr>
+                <tr>
+                    <td>&lt;float.h&gt;</td>
+                    <td></td>
+                    <td>부동소수점 특성 정의. 두 숫자 사이의 최소 차이(_EPSILON), 숫자의 최대 자리수(_DIG), 숫자의 범위의 표현(_MIN, _MAX).</td>
+                </tr>
+                <tr>
+                    <td>&lt;inttypes.h&gt;</td>
+                    <td>C99</td>
+                    <td>정수형 변수의 정확한 변환.</td>
+                </tr>
+                <tr>
+                    <td>&lt;iso646.h&gt;</td>
+                    <td>NA1</td>
+                    <td>ISO 646 문자열 처리.</td>
+                </tr>
+                <tr>
+                    <td>&lt;limits.h&gt;</td>
+                    <td></td>
+                    <td>정수형의 특성 정의, 정수 숫자 범위(_MIN, _MAX).</td>
+                </tr>
+                <tr>
+                    <td>&lt;loccale.h&gt;</td>
+                    <td></td>
+                    <td>로케일( 관련 상수. 국제어 처리를 위한 적용.</td>
+                </tr>
+                <tr>
+                    <td>&lt;math.h&gt;</td>
+                    <td></td>
+                    <td>수학 함수.</td>
+                </tr>
+                <tr>
+                    <td>&lt;setjmp.h&gt;</td>
+                    <td></td>
+                    <td>setjmp 와 longjmp 매크로 선언.</td>
+                </tr>
+                <tr>
+                    <td>&lt;signal&gt;</td>
+                    <td></td>
+                    <td>다양한 예외 처리 제어.</td>
+                </tr>
+                <tr>
+                    <td>&lt;stdarg.h&gt;</td>
+                    <td></td>
+                    <td>아규먼트 변수 처리. va_start, va_arg, va_end 함수 등.</td>
+                </tr>
+                <tr>
+                    <td>&lt;stdbool.h&gt;</td>
+                    <td>C99</td>
+                    <td>논리 변수.</td>
+                </tr>
+                <tr>
+                    <td>&lt;stdint.h&gt;</td>
+                    <td>C99</td>
+                    <td>정수형 변수의 각종 정의/선언.</td>
+                </tr>
+                <tr>
+                    <td>&lt;stddef.h&gt;</td>
+                    <td></td>
+                    <td>유용한 형과 매크로 정의/선언.</td>
+                </tr>
+                <tr>
+                    <td><a href="stdio.html">&lt;stdio.h&gt;</a></td>
+                    <td></td>
+                    <td>C 언어의 입출력 제공. printf 등이 포함 되어 있다.</td>
+                </tr>
+                <tr>
+                    <td><a href="stdlib.html">&lt;stdlib.h&gt;</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><a href="stdlib.html">&lt;string.h&gt;</a></td>
+                    <td></td>
+                    <td>문자열 조작.</td>
+                </tr>
+                <tr>
+                    <td>&lt;tgmath.h&gt;</td>
+                    <td>C99</td>
+                    <td>수학 함수에서 일반 형 변환 관련.</td>
+                </tr>
+                <tr>
+                    <td>&lt;time.h&gt;</td>
+                    <td></td>
+                    <td>	시간과 날짜 변환 함수.</td>
+                </tr>
+                <tr>
+                    <td>&lt;wchar.h&gt;</td>
+                    <td>NA1</td>
+                    <td>국제어 등의 처리를 위한 확장 문자(문자열 처리.</td>
+                </tr>
+                <tr>
+                    <td>&lt;wctpye.h&gt;</td>
+                    <td>NA1</td>
+                    <td>확장 문자 처리.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="second">
+                <h2> 주요 라이브러리 링크 </h2>
+                <hr>
+                <p style="font-size: 20px"><a href="stdio.html">stdio.h</a></p>
+                <p style="font-size: 20px"><a href="stdlib.html">stdlib.h</a></p>
+                <p style="font-size: 20px"><a href="string.html">string.h</a></p>
+            </div>
+        <hr>
+        <footer>
+            * 참조 : Wikipidia
+        </footer>
+    </div>
+
+    <!-- 여기까지 바디 -->
+
+    <aside>
+        <a href="#top">
+            <button class="button">top</button>
+        </a>
+    </aside>
+
+    <!-- 여기까지 어사이드 -->
+
+</body>
+
+</html>

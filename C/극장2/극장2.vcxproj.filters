@@ -18,6 +18,9 @@
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="deservation.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="membership.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -27,14 +30,17 @@
     <ClCompile Include="reservation.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="deservation.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="seats.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="deservation.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="membership.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -44,13 +50,7 @@
     <ClInclude Include="reservation.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="deservation.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="seats.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
