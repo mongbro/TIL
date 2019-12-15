@@ -4,6 +4,7 @@ void reservation() {
 	char op;
 	int num;
 	int seats[10][10];
+	char ap;
 	FILE* fp;
 	fp = fopen("seats.dat", "rb");
 	fread(seats, sizeof(seats), 1, fp);
@@ -12,8 +13,11 @@ void reservation() {
 	while (1) {
 		system("cls");
 		seat(seats);
-		printf("몇석을 예약하시겠습니까?(1~100) : ");
-		scanf("%d", &num);
+		printf("몇석을 예약하시겠습니까?(1~100, 취소 : b) : ");
+		scanf(" %c", &ap);
+		if (ap == 'b')
+			break;
+		num = ap - 48;
 		for (int i = 0; i < num; i++)
 			reservation_c(seats);
 		system("cls");

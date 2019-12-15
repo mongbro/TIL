@@ -108,7 +108,6 @@ void sign_up2() {
 	FILE* fp;
 	MEMBER* d;
 	int check;
-	char age;
 	while (1) {
 		d = (MEMBER*)malloc(1 * sizeof(MEMBER));
 		system("cls");
@@ -116,8 +115,7 @@ void sign_up2() {
 		printf("  이름 : ");
 		scanf("\n%[^\n]s", d->name);
 		printf("  나이 : ");
-		scanf("\n%c", &age);
-		(d->age) = age-48;
+		scanf("\n%d", &d->age);
 		printf("  ID : ");
 		scanf("\n%[^\n]s", d->id);
 		check = create_id(d->id);
