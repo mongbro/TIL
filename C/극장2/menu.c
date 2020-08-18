@@ -17,7 +17,8 @@ int menu() {
 		printf("4. 로그인\n\n");
 		printf("5. 로그아웃\n\n");
 		printf("6. 회원가입\n\n");
-		printf("7. 종료\n\n");
+		printf("7. 정보 보기\n\n");
+		printf("8. 종료\n\n");
 		printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 		a = _getch();
 		if (a == '1') {

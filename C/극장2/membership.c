@@ -85,7 +85,7 @@ void sign_up1() {
 		printf("|===================================================|\n");
 		printf("\n이용 약관에 동의하십니까? Y or N");
 		answer1 = _getch();
-		if (answer1 == 'n' || answer1 == 'N')
+		if (answer1 != 'y' && answer1 != 'Y')
 			break;
 		printf("\n개인정보 수집 및 이용에 대한 안내(필수)\n");
 		printf("|===================================================|\n");
@@ -95,9 +95,9 @@ void sign_up1() {
 		printf("|===================================================|\n");
 		printf("\n개인정보 수집 및 이용에 동의하십니까? Y or N");
 		answer2 = _getch();
-		if (answer2 == 'n' || answer2 == 'N')
+		if (answer2 != 'y' && answer2 != 'Y')
 			break;
-		else if (answer2 == 'y' || answer2 == 'Y') {
+		else{
 			sign_up2();
 			break;
 		}
@@ -108,14 +108,29 @@ void sign_up2() {
 	FILE* fp;
 	MEMBER* d;
 	int check;
+	int age;
+	int num = 0;
 	while (1) {
 		d = (MEMBER*)malloc(1 * sizeof(MEMBER));
 		system("cls");
 		printf("\n");
 		printf("  이름 : ");
 		scanf("\n%[^\n]s", d->name);
-		printf("  나이 : ");
-		scanf("\n%d", &d->age);
+		while (1) {
+			printf("  나이 : ");
+			num = scanf("%d", &age);
+
+			while (getchar() != '\n');
+
+			if (num == 1)
+			{
+				if (age <= 0)
+					continue;
+				d->age = age;
+				break;
+
+			}
+		}
 		printf("  ID : ");
 		scanf("\n%[^\n]s", d->id);
 		check = create_id(d->id);

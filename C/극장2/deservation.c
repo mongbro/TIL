@@ -2,13 +2,27 @@
 
 void deservation() {
 	char op;
-	int num;
+	int num, num2 = fcount(), res_num;
 	int seats[10][10];
 	char ap;
+	MEMBER* list, * d;
 	FILE* fp;
+	extern char log_id[15];
 	fp = fopen("seats.dat", "rb");
 	fread(seats, sizeof(seats), 1, fp);
 	fclose(fp);
+
+	d = (MEMBER*)malloc(1 * sizeof(MEMBER));			//현재 로그인 한 회원정보 메모리 할당
+	fp = fopen("info.dat", "rb");
+	for (int i = 0; i < num2; i++) {
+		fread(d, sizeof(MEMBER), 1, fp);				//파일에서 회원정보 하나씩 읽어오기
+		if (strcmp(log_id, d->id) == 0) {				//현재 로그인 한 회원과 비교해서 같은 정보 찾기
+			break;										//현재 회원과 같은 정보를 찾으면 루프 빠져나가기
+		}
+	}
+	fclose(fp);
+	res_num = d->res_num;
+	free(d);
 
 	while (1) {
 		system("cls");
@@ -18,6 +32,11 @@ void deservation() {
 		if (ap == 'b')
 			break;
 		num = ap - 48;
+		if (num > res_num) {
+			printf("회원님이 예약한 자리는 %d석입니다.\n%d 이하의 숫자를 입력해주세요.\n", res_num, res_num);
+			if (getch())
+				continue;
+		}
 		for (int i = 0; i < num; i++)
 			deservation_c(seats);
 		system("cls");
