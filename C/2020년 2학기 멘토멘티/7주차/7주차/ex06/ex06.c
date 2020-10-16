@@ -1,21 +1,32 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-int power(int base, int power_raised);
+void print_reverse(int a[], int n);
+void print_reverse2(int* a, int* b, int* c, int n);
 
 int main() {
-	int base, power_raised;
-	printf("นุ : ");
-	scanf("%d", &base);
-	printf("ม๖ผ๖ : ");
-	scanf("%d", &power_raised);
-	printf("%d ^ %d = %d", base, power_raised, power(base, power_raised));
+	int a[3] = { 10,20,30 };
+	int b = 0, c = 1, d = 2;
+	print_reverse(a, 3);
+
+	printf("\n");
+	printf("%d %d %d", b, c, d);
+	printf("\n");
+	print_reverse2(&b, &c, &d, 3);
 }
 
-int power(int base, int power_raised) {
-	if (power_raised == 1)
-		return base;
-	else {
-		return base * power(base, power_raised - 1);
+void print_reverse(int a[], int n) {
+	int* p = a + n - 1;
+	for (int i = 0; i < n; i++) {
+		printf("%d ", *p--);
 	}
+}
+
+void print_reverse2(int* a, int* b, int* c, int n) {
+	(*a) += 3;
+	(*b) += 3;
+	(*c) += 3;
+	printf("%d ", *a);
+	printf("%d ", *b);
+	printf("%d ", *c);
 }
