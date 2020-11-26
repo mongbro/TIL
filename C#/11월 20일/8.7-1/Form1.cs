@@ -23,7 +23,7 @@ namespace _8._7_1
             Font font2 = thisfont;
             if (style_strikeout.Checked)
             {
-                changetext.Font = new Font(thisfont, thisfont.Style | FontStyle.Strikeout | FontStyle.Regular);
+                changetext.Font = new Font(thisfont, thisfont.Style | FontStyle.Strikeout);
             }
             else
             {

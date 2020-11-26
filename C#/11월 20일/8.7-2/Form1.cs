@@ -48,7 +48,7 @@ namespace _8._7_2
             rstlabel.Text = Convert.ToString(result);
         }
 
-        private void modbtn_Click(object sender, EventArgs e)       // 모드는 0으로 가능한걸로 아는데 왜 안되는 건지 모르겠습니다.
+        private void modbtn_Click(object sender, EventArgs e)
         {
             try
             {
