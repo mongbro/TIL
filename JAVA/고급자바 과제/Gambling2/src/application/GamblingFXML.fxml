@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
+minWidth="-Infinity" prefHeight="141.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/8" 
+xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GamblingAction">
+   <children>
+      <Label fx:id="label1" alignment="CENTER" layoutX="23.0" layoutY="43.0" prefHeight="28.0" 
+      prefWidth="67.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" alignment="CENTER" layoutX="106.0" layoutY="43.0" prefHeight="28.0" 
+      prefWidth="67.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label3" alignment="CENTER" layoutX="188.0" layoutY="43.0" prefHeight="28.0" 
+      prefWidth="67.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="textlabel" alignment="CENTER" layoutX="46.0" layoutY="86.0" prefHeight="40.0" 
+      prefWidth="200.0" text="시작합니다">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="checklabel" alignment="CENTER" layoutX="133.0" layoutY="14.0" prefHeight="13.0" 
+      prefWidth="27.0" text="true" visible="false">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

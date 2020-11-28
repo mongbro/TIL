@@ -7,33 +7,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane fx:id="pa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
-minWidth="-Infinity" prefHeight="180.0" prefWidth="240.0" 
-xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="application.GamblingAction">
+<Pane fx:id="pa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GamblingAction">
    <children>
-      <Label fx:id="label01" alignment="CENTER" layoutX="18.0" 
-      layoutY="46.0" prefHeight="30.0" prefWidth="60.0" 
-      style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+      <Label fx:id="label01" alignment="CENTER" layoutX="18.0" layoutY="46.0" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="label02" alignment="CENTER" layoutX="91.0" 
-      layoutY="46.0" prefHeight="30.0" prefWidth="60.0" 
-      style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+      <Label fx:id="label02" alignment="CENTER" layoutX="91.0" layoutY="46.0" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="label03" alignment="CENTER" layoutX="163.0" 
-      layoutY="46.0" prefHeight="30.0" prefWidth="60.0" 
-      style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+      <Label fx:id="label03" alignment="CENTER" layoutX="163.0" layoutY="46.0" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="textlabel" alignment="CENTER" layoutX="45.0" 
-      layoutY="116.0" prefHeight="30.0" prefWidth="150.0" text="시작합니다." />
+      <Label fx:id="textlabel" alignment="CENTER" layoutX="45.0" layoutY="116.0" prefHeight="30.0" prefWidth="150.0" text="시작합니다." />
+      <Label fx:id="check" alignment="CENTER" layoutX="90.0" layoutY="20.0" prefHeight="13.0" prefWidth="60.0" text="true" />
    </children>
 </Pane>

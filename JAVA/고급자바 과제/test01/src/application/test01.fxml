@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<HBox alignment="CENTER" prefHeight="250.0" prefWidth="300.0" 
-				xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
+minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" 
+xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller">
    <children>
-      <Button mnemonicParsing="false" text="OK" />
+      <Label fx:id="la01" alignment="CENTER" layoutX="33.0" layoutY="45.0" prefHeight="30.0" 
+      prefWidth="50.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="la02" alignment="CENTER" layoutX="100.0" layoutY="45.0" prefHeight="30.0" 
+      prefWidth="50.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="la03" alignment="CENTER" layoutX="167.0" layoutY="45.0" prefHeight="30.0" 
+      prefWidth="50.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="latext" alignment="CENTER" layoutX="75.0" layoutY="89.0" prefHeight="30.0" 
+      prefWidth="100.0" text="시작합니다." />
    </children>
-</HBox>
+</AnchorPane>

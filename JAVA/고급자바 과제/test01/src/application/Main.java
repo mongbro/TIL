@@ -16,8 +16,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("test01.fxml"));
 		Scene scene = new Scene(root);
+		scene.getRoot().requestFocus();
 		
-		primaryStage.setTitle("FXML Loading Example");
+		primaryStage.setTitle("Gambling");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
