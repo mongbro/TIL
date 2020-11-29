@@ -5,19 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("GamblingFXML.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("calculatorFXML.fxml"));
 			Scene sc = new Scene(root);
 			sc.getRoot().requestFocus();
-			primaryStage.setTitle("Gambling");
 			primaryStage.setScene(sc);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
+			
 		}
 	}
 	

@@ -8,7 +8,8 @@
 
 <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
 minWidth="-Infinity" prefHeight="141.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/8" 
-xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GamblingAction">
+xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GamblingAction">	
+<!-- 메인 컨테이너 -->
    <children>
       <Label fx:id="label1" alignment="CENTER" layoutX="23.0" layoutY="43.0" prefHeight="28.0" 
       prefWidth="67.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
@@ -16,29 +17,34 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GamblingAction">
             <Font size="24.0" />
          </font>
       </Label>
+<!-- 첫번째 숫자가 나오는 라벨 -->
       <Label fx:id="label2" alignment="CENTER" layoutX="106.0" layoutY="43.0" prefHeight="28.0" 
       prefWidth="67.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+<!-- 두번째 숫자가 나오는 라벨 -->
       <Label fx:id="label3" alignment="CENTER" layoutX="188.0" layoutY="43.0" prefHeight="28.0" 
       prefWidth="67.0" style="-fx-background-color: purple;" text="0" textFill="YELLOW">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+<!-- 세번째 숫자가 나오는 라벨 -->
       <Label fx:id="textlabel" alignment="CENTER" layoutX="46.0" layoutY="86.0" prefHeight="40.0" 
       prefWidth="200.0" text="시작합니다">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
+<!-- 결과를 출력하는 라벨 -->
       <Label fx:id="checklabel" alignment="CENTER" layoutX="133.0" layoutY="14.0" prefHeight="13.0" 
       prefWidth="27.0" text="true" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
+<!-- 세 수가 일치하면 이벤트를 더이상 처리 하지 않는 것을 확인하는 라벨 (visible false로 해서 사용자는 볼 수 없음) -->
    </children>
 </AnchorPane>
