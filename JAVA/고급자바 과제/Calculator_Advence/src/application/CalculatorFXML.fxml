@@ -67,7 +67,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btn0" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="0">
+            <Button fx:id="btn0" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="0">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -75,7 +75,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn4" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="4" GridPane.rowIndex="1">
+            <Button fx:id="btn4" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="4" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -83,7 +83,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn8" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="8" GridPane.rowIndex="2">
+            <Button fx:id="btn8" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="8" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -99,7 +99,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn1" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="1" GridPane.columnIndex="1">
+            <Button fx:id="btn1" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="1" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -107,7 +107,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="2" GridPane.columnIndex="2">
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="2" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -115,7 +115,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn3" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="3" GridPane.columnIndex="3">
+            <Button fx:id="btn3" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="3" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -123,7 +123,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn5" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btn5" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -131,7 +131,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn6" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="btn6" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -139,7 +139,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn7" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="7" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="btn7" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="7" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -147,7 +147,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btn9" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="9" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btn9" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="9" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -155,7 +155,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnCE" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="CE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="btnCE" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="CE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -163,7 +163,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnresult" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" text="계산" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="btnresult" mnemonicParsing="false" prefHeight="95.0" prefWidth="173.0" style="-fx-background-color: #00ffff;" text="계산" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
