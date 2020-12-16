@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _07
+namespace _18_7
 {
     public partial class Form1 : Form
     {
@@ -20,22 +20,17 @@ namespace _07
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             string str = "";
-
-            if (e.KeyCode.ToString() != "ControlKey" && 
-                e.KeyCode.ToString() != "Menu" && 
-                e.KeyCode.ToString() != "ShiftKey")
+            if (e.KeyCode.ToString() != "Menu" && e.KeyCode.ToString() != "ControlKey" && e.KeyCode.ToString() != "ShiftKey")
                 str += e.KeyCode;
-            if (e.Alt)
-                str += " + Alt";
             if (e.Control)
-                str += " + Ctrl";
+                str += " + ctrl";
+            if (e.Alt)
+                str += " + alt";
             if (e.Shift)
-                str += " + Shift";
+                str += " + shift";
+            if (e.KeyCode.ToString() != "Menu" && e.KeyCode.ToString() != "ControlKey" && e.KeyCode.ToString() != "ShiftKey")
+                MessageBox.Show(str, "누른 키");
 
-            if (e.KeyCode.ToString() != "ControlKey" &&
-                e.KeyCode.ToString() != "Menu" && 
-                e.KeyCode.ToString() != "ShiftKey")
-                MessageBox.Show(str, "누른키");
         }
     }
 }
