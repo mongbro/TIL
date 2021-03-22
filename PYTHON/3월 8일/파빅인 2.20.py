@@ -1,0 +1,5 @@
+age = input('나이 : ')
+after = input('몇 년 후? ')
+age = int(age)
+after = int(after)
+print(age + after)
