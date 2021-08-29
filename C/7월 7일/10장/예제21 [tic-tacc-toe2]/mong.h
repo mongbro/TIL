@@ -15,6 +15,7 @@ int check(int n, int m);
 
 void print_arr()
 {
+	system("cls");
 	printf("---|---|---\n");											//  ---|---|---
 	printf(" %c | %c | %c \n", arr[0][0], arr[0][1], arr[0][2]);		//     |   |   
 	printf("---|---|---\n");											//  ---|---|---
@@ -73,47 +74,54 @@ int end_con1()
 
 int won_by_player1()
 {
-	if (arr[0][0] == 'O'&&arr[0][1] == 'O'&&arr[0][2] == 'O')
-		return 1;
-	if (arr[1][0] == 'O'&&arr[1][1] == 'O'&&arr[1][2] == 'O')
-		return 1;
-	if (arr[2][0] == 'O'&&arr[2][1] == 'O'&&arr[2][2] == 'O')
-		return 1;
-	if (arr[0][0] == 'O'&&arr[1][0] == 'O'&&arr[2][0] == 'O')
-		return 1;
-	if (arr[0][1] == 'O'&&arr[1][1] == 'O'&&arr[2][1] == 'O')
-		return 1;
-	if (arr[0][2] == 'O'&&arr[1][2] == 'O'&&arr[2][2] == 'O')			//p1의 승리 조건
-		return 1;
-	if (arr[0][0] == 'O'&&arr[1][1] == 'O'&&arr[2][2] == 'O')			//어디든 3개 연속
-		return 1;
-	if (arr[0][2] == 'O'&&arr[1][1] == 'O'&&arr[2][0] == 'O')
-		return 1;
-	else
-		return 0;
+	int flag;
+	for (int i = 0; i < 3; i++) {
+		flag = 0;
+		for (int j = 0; j < 3; j++) {
+			if (arr[i][j] == 'O')
+				flag++;
+			if (flag == 3)
+				return 1;
+		}
+		flag = 0;
+		for (int j = 0; j < 3; j++) {
+			if (arr[j][i] == 'O')
+				flag++;
+			if (flag == 3)
+				return 1;
+		}
+		if (arr[0][0] == 'O' && arr[1][1] == 'O' && arr[2][2] == 'O')
+			return 1;
+		if (arr[0][2] == 'O' && arr[1][1] == 'O' && arr[2][0] == 'O')
+			return 1;
+	}
+	return 0;
 }
 
 int won_by_computer()
 {
-	if (arr[0][0] == 'X'&&arr[0][1] == 'X'&&arr[0][2] == 'X')
-		return 1;
-	if (arr[1][0] == 'X'&&arr[1][1] == 'X'&&arr[1][2] == 'X')
-		return 1;
-	if (arr[2][0] == 'X'&&arr[2][1] == 'X'&&arr[2][2] == 'X')
-		return 1;
-	if (arr[0][0] == 'X'&&arr[1][0] == 'X'&&arr[2][0] == 'X')
-		return 1;
-	if (arr[0][1] == 'X'&&arr[1][1] == 'X'&&arr[2][1] == 'X')
-		return 1;
-	if (arr[0][2] == 'X'&&arr[1][2] == 'X'&&arr[2][2] == 'X')			//computer의 승리 조건
-		return 1;
-	if (arr[0][0] == 'X'&&arr[1][1] == 'X'&&arr[2][2] == 'X')			//어디든 3개 연속
-		return 1;
-	if (arr[0][2] == 'X'&&arr[1][1] == 'X'&&arr[2][0] == 'X')
-		return 1;
-	else
-		return 0;
-
+	int flag;
+	for (int i = 0; i < 3; i++) {
+		flag = 0;
+		for (int j = 0; j < 3; j++) {
+			if (arr[i][j] == 'X')
+				flag++;
+			if (flag == 3)
+				return 1;
+		}
+		flag = 0;
+		for (int j = 0; j < 3; j++) {
+			if (arr[j][i] == 'X')
+				flag++;
+			if (flag == 3)
+				return 1;
+		}
+		if (arr[0][0] == 'X' && arr[1][1] == 'X' && arr[2][2] == 'X')
+			return 1;
+		if (arr[0][2] == 'X' && arr[1][1] == 'X' && arr[2][0] == 'X')
+			return 1;
+	}
+	return 0;
 }
 
 int end_con2()
